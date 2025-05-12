@@ -13,11 +13,13 @@ $white: #ffffff;
 $azure: #0b3954;
 $grey: #333333;
 $light_grey: #f5f5f5;
+$orange: #ffb128;
 
 // HEADER ============================================
 
 header {
   @include displayCenter(center, center);
+  flex-direction: column;
   width: 100vw;
   padding: 1px 42px;
 
@@ -29,11 +31,12 @@ header {
     max-width: 1220px;
     margin: 30px auto 10px auto;
     .logo {
-      width: 300px;
-      height: 43.13px;
+      width: clamp(170px, 68vw, 300px);
+      height: clamp(28.75px, 7vw, 43.13px);
       cursor: pointer;
-      &img {
+      img {
         width: 100%;
+        height: 100%;
       }
     }
 
@@ -64,7 +67,7 @@ header {
         height: 16px;
         left: 14px;
         cursor: pointer;
-        &img {
+        img {
           width: 100%;
           height: 100%;
         }
@@ -84,7 +87,7 @@ header {
           @include displayCenter(center, center);
           width: 20px;
           height: 20px;
-          &img {
+          img {
             width: 100%;
             height: 100%;
           }
@@ -120,7 +123,7 @@ header {
           @include displayCenter(center, center);
           width: 20px;
           height: 20px;
-          &img {
+          img {
             width: 100%;
             height: 100%;
           }
@@ -144,9 +147,102 @@ header {
         width: 20px;
         height: 20px;
         cursor: pointer;
-        &img {
+        img {
           width: 100%;
           height: 100%;
+        }
+      }
+      .burger_menu {
+        // @include displayCenter(center, center);
+        display: none;
+        width: 35px;
+        height: 20px;
+        cursor: pointer;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .res_search {
+        display: none;
+        width: 35px;
+        height: 20px;
+        cursor: pointer;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  nav {
+    @include displayCenter(center, center);
+    width: 100%;
+    max-width: 1220px;
+    ul {
+      @include displayCenter(center, center);
+      width: 100%;
+      list-style: none;
+      li {
+        @include displayCenter(center, center);
+        flex-direction: column;
+        gap: 20px;
+        width: 175.19px;
+        border-left: 1px solid $light_grey;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0%;
+        padding: 6px;
+        cursor: pointer;
+        img {
+          width: 32px;
+          height: 32px;
+        }
+        a {
+          text-decoration: none;
+          color: $azure;
+        }
+        i {
+          color: $azure;
+        }
+        &:hover:not(.sales) {
+          a {
+            color: $orange;
+            transition: 0.2s ease-in-out;
+          }
+          i {
+            color: $orange;
+            transition: 0.2s ease-in-out;
+          }
+        }
+      }
+      .chairs {
+        border: none;
+      }
+      .sales {
+        padding-top: 15px;
+        padding-bottom: 10px;
+        gap: 10px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        border: none;
+        background-color: $orange;
+        img {
+          width: 23px;
+          height: 20px;
+        }
+        a {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0%;
+          text-align: center;
+          color: $white;
+        }
+        &:hover {
+          background-color: $azure;
+          transition: 0.2s ease-in-out;
         }
       }
     }
@@ -155,11 +251,47 @@ header {
 
 // RESPONSIVE ============================================
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 960px) {
   header {
+    position: fixed;
+    top: 0px;
     .header_container {
       .search_container {
         margin: 0 5px;
+      }
+      .user_container {
+        .burger_menu {
+          @include displayCenter(center, center);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0px;
+    .header_container {
+      .search_container {
+        display: none;
+      }
+      .user_container {
+        .cart_container {
+          display: none;
+        }
+        .user_balance {
+          display: none;
+        }
+        .favorite_items {
+          display: none;
+        }
+        .user {
+          display: none;
+        }
+        .res_search {
+          @include displayCenter(center, center);
+        }
       }
     }
   }

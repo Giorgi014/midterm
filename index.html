@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./Components/Header/header.css" />
-    <link rel="stylesheet" href="./Components/Products/products.css" />
-    <link rel="stylesheet" href="./Components/Rooms/rooms.css" />
+    <link rel="stylesheet" href="./Components/Main/main.css" />
+    <link rel="stylesheet" href="./Components/Main/Products/products.css" />
+    <link rel="stylesheet" href="./Components/Main/Rooms/rooms.css" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link
       rel="stylesheet"
       href="./Components/SectionWrapper/sectionWrapper.css"
     />
-    <link rel="stylesheet" href="./Components/Wrapper/wrapper.css" />
+    <link rel="stylesheet" href="./Components/Main/Wrapper/wrapper.css" />
     <title>BeFurnitureStore</title>
   </head>
   <body>
     <header>
+      <!-- HEADER CONTAINER ======================================== -->
+
       <article class="header_container">
         <div class="logo"><img src="./assets/logo.svg" alt="logo" /></div>
         <section class="search_container">
@@ -42,8 +52,90 @@
           <div class="user">
             <img src="./assets/icons/user.svg" alt="user" />
           </div>
+          <div class="burger_menu">
+            <img src="./assets/icons/burger-menu.svg" alt="" />
+          </div>
+          <div class="res_search">
+            <img src="./assets/icons/search.svg" alt="search" />
+          </div>
         </section>
       </article>
+
+      <!-- NAVIGATION ======================================== -->
+
+      <nav>
+        <ul>
+          <li class="chairs">
+            <img src="./assets/chair.svg" alt="" />
+            <span>
+              <a href="#">CHAIRS</a>
+              <i class="fa-solid fa-arrow-down"></i>
+            </span>
+          </li>
+          <li class="beds">
+            <img src="./assets/beds.svg" alt="" />
+            <span>
+              <a href="#">BEDS</a>
+              <i class="fa-solid fa-arrow-down"></i>
+            </span>
+          </li>
+          <li class="tables">
+            <img src="./assets/tables.svg" alt="" />
+            <span>
+              <a href="#">TABLES</a>
+              <i class="fa-solid fa-arrow-down"></i>
+            </span>
+          </li>
+          <li class="desks">
+            <img src="./assets/desks.svg" alt="" />
+            <span>
+              <a href="#">DESKS</a>
+              <i class="fa-solid fa-arrow-down"></i>
+            </span>
+          </li>
+          <li class="cabinets">
+            <img src="./assets/cabinets.svg" alt="" />
+            <span>
+              <a href="#">CABINETS</a>
+              <i class="fa-solid fa-arrow-down"></i>
+            </span>
+          </li>
+          <li class="lighting">
+            <img src="./assets/lighting.svg" alt="" />
+            <span>
+              <a href="#">LIGHTING</a>
+              <i class="fa-solid fa-arrow-down"></i>
+            </span>
+          </li>
+          <li class="sales">
+            <img src="./assets/icons/star.svg" alt="" />
+            <a href="#">SALES</a>
+          </li>
+        </ul>
+      </nav>
     </header>
+
+    <!-- MAIN ======================================== -->
+
+    <main>
+      <article class="wrapper_container">
+        <div class="warpper_background"></div>
+        <section class="wrapper_image_conatiner">
+          <div class="wrapper_image">
+            <img src="./assets/wrapper.svg" alt="" />
+          </div>
+          <div class="wrapper_info">
+            <p>BEFURNITURE</p>
+            <h1>LUXURY FURNITURE</h1>
+            <div class="wrapper_buttons">
+              <button class="go_shop">GO TO SHOP</button>
+              <button class="collections">SEE COLLECTION</button>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <script src="app.js"></script>
   </body>
 </html>
