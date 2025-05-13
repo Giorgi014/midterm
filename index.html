@@ -6,6 +6,10 @@
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./Components/Header/header.css" />
     <link rel="stylesheet" href="./Components/Main/main.css" />
+    <link
+      rel="stylesheet"
+      href="./Components/Main/SectionWrapper/sectionWrapper.css"
+    />
     <link rel="stylesheet" href="./Components/Main/Products/products.css" />
     <link rel="stylesheet" href="./Components/Main/Rooms/rooms.css" />
     <link rel="stylesheet" href="style.css" />
@@ -16,11 +20,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="./Components/SectionWrapper/sectionWrapper.css"
-    />
-    <link rel="stylesheet" href="./Components/Main/Wrapper/wrapper.css" />
     <title>BeFurnitureStore</title>
   </head>
   <body>
@@ -36,26 +35,26 @@
           <input type="text" placeholder="What are you looking for?" />
         </section>
         <section class="user_container">
-          <div class="cart_container">
+          <div id="cart_container">
             <div class="cart_icon">
               <img src="./assets/icons/cart.svg" alt="cart" />
             </div>
-            <div class="cart_number">0</div>
+            <div id="cart_number">0</div>
           </div>
-          <div class="user_balance">$0.00</div>
-          <div class="favorite_items">
+          <div id="user_balance">$0.00</div>
+          <div id="favorite_items">
             <div class="favorite_icon">
               <img src="./assets/icons/favorites.svg" alt="favorites" />
             </div>
-            <div class="favorite_item_number">0</div>
+            <div id="favorite_item_number">0</div>
           </div>
-          <div class="user">
+          <div id="user">
             <img src="./assets/icons/user.svg" alt="user" />
           </div>
-          <div class="burger_menu">
+          <div id="burger_menu">
             <img src="./assets/icons/burger-menu.svg" alt="" />
           </div>
-          <div class="res_search">
+          <div id="res_search">
             <img src="./assets/icons/search.svg" alt="search" />
           </div>
         </section>
@@ -65,12 +64,52 @@
 
       <nav>
         <ul>
+          <div id="close_button">
+            <i class="fa-solid fa-xmark" id="remove_icon"></i>
+          </div>
           <li class="chairs">
             <img src="./assets/chair.svg" alt="" />
             <span>
               <a href="#">CHAIRS</a>
               <i class="fa-solid fa-arrow-down"></i>
             </span>
+            <seaction class="hover_container">
+              <div class="hover_container_sections">
+                <p class="chairs_hover">
+                  <a href="#">ARMCHAIRS</a>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </p>
+                <p class="chairs_hover">
+                  <a href="#">BAR STOOLS</a>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </p>
+                <p class="chairs_hover">
+                  <a href="#">CHAIR PADS</a>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </p>
+                <p class="chairs_hover">
+                  <a href="#">CHAIRS LOUNGES</a>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </p>
+                <p class="chairs_hover">
+                  <a href="#">DESKS CHAIRS</a>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </p>
+                <p class="chairs_hover">
+                  <a href="#">DINING CHAIRS</a>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </p>
+              </div>
+              <div class="recomend_product_container">
+                <p class="we_recomended">WE RECOMMEND</p>
+                <div class="recomended_item">
+                  <h2>Fancy chair</h2>
+                  <p>Rutrum non id sem turpis elementum vel id. Magna.</p>
+                </div>
+                <p class="recomended_item_price">$1550.00</p>
+                <img src="./assets/chair.png" alt="" />
+              </div>
+            </seaction>
           </li>
           <li class="beds">
             <img src="./assets/beds.svg" alt="" />
@@ -118,7 +157,7 @@
     <!-- MAIN ======================================== -->
 
     <main>
-      <article class="wrapper_container">
+      <!-- <article class="wrapper_container">
         <div class="warpper_background"></div>
         <section class="wrapper_image_conatiner">
           <div class="wrapper_image">
@@ -133,7 +172,7 @@
             </div>
           </div>
         </section>
-      </article>
+      </article> -->
     </main>
 
     <script src="app.js"></script>

@@ -14,5 +14,6 @@ main {
   @include displayCenter(center, center);
   flex-direction: column;
   width: 100vw;
+  height: 1000px;
   background-color: $light_grey;
 }

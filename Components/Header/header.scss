@@ -13,7 +13,18 @@ $white: #ffffff;
 $azure: #0b3954;
 $grey: #333333;
 $light_grey: #f5f5f5;
+$dark_white: #a9a9a9;
 $orange: #ffb128;
+$blue: #1389bc;
+
+@keyframes animateMenu {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 200px;
+  }
+}
 
 // HEADER ============================================
 
@@ -31,7 +42,7 @@ header {
     max-width: 1220px;
     margin: 30px auto 10px auto;
     .logo {
-      width: clamp(170px, 68vw, 300px);
+      width: clamp(170px, 68vw, 240px);
       height: clamp(28.75px, 7vw, 43.13px);
       cursor: pointer;
       img {
@@ -79,7 +90,7 @@ header {
     .user_container {
       @include displayCenter(center, center);
       gap: 14.83px;
-      .cart_container {
+      #cart_container {
         @include displayCenter(center, center);
         position: relative;
         cursor: pointer;
@@ -92,7 +103,7 @@ header {
             height: 100%;
           }
         }
-        .cart_number {
+        #cart_number {
           @include displayCenter(center, center);
           position: absolute;
           width: 18px;
@@ -106,7 +117,7 @@ header {
           color: $white;
         }
       }
-      .user_balance {
+      #user_balance {
         font-family: "Poppins-Bold";
         font-size: 16px;
         font-weight: 600;
@@ -115,7 +126,7 @@ header {
         color: $azure;
         cursor: pointer;
       }
-      .favorite_items {
+      #favorite_items {
         @include displayCenter(center, center);
         position: relative;
         cursor: pointer;
@@ -128,7 +139,7 @@ header {
             height: 100%;
           }
         }
-        .favorite_item_number {
+        #favorite_item_number {
           @include displayCenter(center, center);
           position: absolute;
           width: 18px;
@@ -142,7 +153,7 @@ header {
           color: $white;
         }
       }
-      .user {
+      #user {
         @include displayCenter(center, center);
         width: 20px;
         height: 20px;
@@ -152,7 +163,7 @@ header {
           height: 100%;
         }
       }
-      .burger_menu {
+      #burger_menu {
         // @include displayCenter(center, center);
         display: none;
         width: 35px;
@@ -163,7 +174,7 @@ header {
           height: 100%;
         }
       }
-      .res_search {
+      #res_search {
         display: none;
         width: 35px;
         height: 20px;
@@ -183,11 +194,22 @@ header {
       @include displayCenter(center, center);
       width: 100%;
       list-style: none;
+      #close_button {
+        // @include displayCenter(center, center);
+        display: none;
+        width: max-content;
+        height: max-content;
+        cursor: pointer;
+        // i {
+        //   font-size: 14px;
+        //   color: $azure;
+        // }
+      }
       li {
         @include displayCenter(center, center);
         flex-direction: column;
         gap: 20px;
-        width: 175.19px;
+        width: clamp(128.53px, 90vw, 175.19px);
         border-left: 1px solid $light_grey;
         font-weight: 500;
         font-size: 14px;
@@ -218,7 +240,104 @@ header {
         }
       }
       .chairs {
+        position: relative;
         border: none;
+        .hover_container {
+          position: absolute;
+          display: none;
+          opacity: 0;
+          // visibility: hidden;
+          top: 120px;
+          left: 0px;
+          width: 745px;
+          height: min-content;
+          background-color: $white;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          transition: opacity 0.3s ease, display 0.3s ease;
+        }
+        &:hover {
+          .hover_container {
+            @include displayCenter(space-between, flex-start);
+            top: 79.5px;
+            left: 0px;
+            opacity: 1;
+            // visibility: visible;
+
+            .hover_container_sections {
+              @include displayCenter(center, center);
+              flex-direction: column;
+              width: 40%;
+              padding: 25px 20px;
+              // background-color: $white;
+              .chairs_hover {
+                @include displayCenter(space-between, center);
+                border-left: none;
+                border-bottom: 1px solid $light_grey;
+                width: 100%;
+                padding: 15px 10px;
+                a {
+                  color: $azure;
+                }
+                i {
+                  color: $light_grey;
+                }
+                &:hover {
+                  a {
+                    color: $orange;
+                  }
+                  i {
+                    color: $orange;
+                  }
+                }
+              }
+            }
+            .recomend_product_container {
+              @include displayCenter(flex-start, flex-start);
+              flex-direction: column;
+              width: 70%;
+              height: 100%;
+              background-color: $orange;
+              // background-color: $light_grey;
+              border-bottom-right-radius: 16px;
+              .we_recomended {
+                margin: 30px 0px 25px 25px;
+                color: $blue;
+                font-size: 14px;
+                line-height: 18px;
+              }
+              .recomended_item {
+                width: 75%;
+                margin-left: 25px;
+                h2 {
+                  color: $azure;
+                  font-size: 20px;
+                  line-height: 26px;
+                  font-weight: 500;
+                }
+                p {
+                  font-size: 16px;
+                  line-height: 26px;
+                  color: #a9a9a9;
+                }
+              }
+              .recomended_item_price {
+                margin: 30px 25px;
+                color: $azure;
+                font-size: 20px;
+                line-height: 26px;
+                font-weight: 500;
+              }
+              img {
+                position: absolute;
+                bottom: 30px;
+                right: -70px;
+                width: 200px;
+                height: 200px;
+              }
+            }
+          }
+        }
       }
       .sales {
         padding-top: 15px;
@@ -260,8 +379,56 @@ header {
         margin: 0 5px;
       }
       .user_container {
-        .burger_menu {
+        #burger_menu {
           @include displayCenter(center, center);
+        }
+      }
+    }
+    nav {
+      ul {
+        display: none;
+        &.active {
+          @include displayCenter(flex-start, flex-start);
+          z-index: 99;
+          position: absolute;
+          flex-direction: column;
+          background-color: $light_grey;
+          width: 200px;
+          animation: animateMenu 0.5s linear;
+          height: 100vh;
+          top: 0px;
+          right: 0px;
+          padding-top: 50px;
+          #close_button {
+            @include displayCenter(center, center);
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            i {
+              font-size: 14px;
+              color: $dark_white;
+              transition: color 0.4s ease-in-out, transform 0.4s ease-in-out,
+                scale 0.4s ease-in-out;
+              &:hover {
+                color: $azure;
+                transform: rotate(180deg) scale(1.4);
+              }
+            }
+          }
+          li {
+            @include displayCenter(flex-start, center);
+            gap: 5px;
+            flex-direction: row;
+            border: none;
+            span {
+              .fa-arrow-down {
+                display: none;
+              }
+            }
+          }
+          .sales {
+            display: none;
+          }
         }
       }
     }
@@ -277,19 +444,19 @@ header {
         display: none;
       }
       .user_container {
-        .cart_container {
+        #cart_container {
           display: none;
         }
-        .user_balance {
+        #user_balance {
           display: none;
         }
-        .favorite_items {
+        #favorite_items {
           display: none;
         }
-        .user {
+        #user {
           display: none;
         }
-        .res_search {
+        #res_search {
           @include displayCenter(center, center);
         }
       }
