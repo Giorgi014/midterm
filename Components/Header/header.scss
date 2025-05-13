@@ -26,6 +26,19 @@ $blue: #1389bc;
   }
 }
 
+@keyframes topAnimation {
+  0% {
+    top: 100px;
+  }
+  100% {
+    top: 79.5px;
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
 // HEADER ============================================
 
 header {
@@ -33,6 +46,7 @@ header {
   flex-direction: column;
   width: 100vw;
   padding: 1px 42px;
+  background-color: $white;
 
   // HEADER CONTAINER ============================================
 
@@ -188,8 +202,16 @@ header {
   }
   nav {
     @include displayCenter(center, center);
+    position: relative;
     width: 100%;
     max-width: 1220px;
+    // .shadow_background {
+    //   position: absolute;
+    //   bottom: 0px;
+    //   width: 100vw;
+    //   height: 50vh;
+    //   background-color: rgba(102, 51, 153, 0.167);
+    // }
     ul {
       @include displayCenter(center, center);
       width: 100%;
@@ -244,101 +266,634 @@ header {
         border: none;
         .hover_container {
           position: absolute;
-          display: none;
           opacity: 0;
-          // visibility: hidden;
-          top: 120px;
+          visibility: hidden;
+          top: 79.5px;
           left: 0px;
-          width: 745px;
-          height: min-content;
+          // width: 700px;
+          width: clamp(300px, 47vw, 700px);
+          height: max-content;
           background-color: $white;
           border-bottom-left-radius: 16px;
           border-bottom-right-radius: 16px;
-          transition: opacity 0.3s ease, display 0.3s ease;
-        }
-        &:hover {
-          .hover_container {
-            @include displayCenter(space-between, flex-start);
-            top: 79.5px;
-            left: 0px;
-            opacity: 1;
-            // visibility: visible;
-
-            .hover_container_sections {
-              @include displayCenter(center, center);
-              flex-direction: column;
-              width: 40%;
-              padding: 25px 20px;
-              // background-color: $white;
-              .chairs_hover {
-                @include displayCenter(space-between, center);
-                border-left: none;
-                border-bottom: 1px solid $light_grey;
-                width: 100%;
-                padding: 15px 10px;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          .hover_container_sections {
+            @include displayCenter(center, center);
+            flex-direction: column;
+            width: 40%;
+            padding: 25px 20px;
+            // background-color: $white;
+            .item_hover {
+              @include displayCenter(space-between, center);
+              border-left: none;
+              border-bottom: 1px solid $light_grey;
+              width: 100%;
+              // padding: 15px 10px;
+              padding-top: clamp(10px, 2vw, 20px);
+               a {
+                text-transform: uppercase;
+                color: $azure;
+              }
+              i {
+                color: $light_grey;
+              }
+              &:hover {
                 a {
-                  color: $azure;
+                  color: $orange;
                 }
                 i {
-                  color: $light_grey;
+                  color: $orange;
                 }
-                &:hover {
-                  a {
-                    color: $orange;
-                  }
-                  i {
-                    color: $orange;
-                  }
-                }
-              }
-            }
-            .recomend_product_container {
-              @include displayCenter(flex-start, flex-start);
-              flex-direction: column;
-              width: 70%;
-              height: 100%;
-              background-color: $orange;
-              // background-color: $light_grey;
-              border-bottom-right-radius: 16px;
-              .we_recomended {
-                margin: 30px 0px 25px 25px;
-                color: $blue;
-                font-size: 14px;
-                line-height: 18px;
-              }
-              .recomended_item {
-                width: 75%;
-                margin-left: 25px;
-                h2 {
-                  color: $azure;
-                  font-size: 20px;
-                  line-height: 26px;
-                  font-weight: 500;
-                }
-                p {
-                  font-size: 16px;
-                  line-height: 26px;
-                  color: #a9a9a9;
-                }
-              }
-              .recomended_item_price {
-                margin: 30px 25px;
-                color: $azure;
-                font-size: 20px;
-                line-height: 26px;
-                font-weight: 500;
-              }
-              img {
-                position: absolute;
-                bottom: 30px;
-                right: -70px;
-                width: 200px;
-                height: 200px;
               }
             }
           }
         }
+        .recomend_product_container {
+          @include displayCenter(flex-start, flex-start);
+          flex-direction: column;
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+          width: 60%;
+          height: 100%;
+          background-color: $orange;
+          // background-color: $light_grey;
+          border-bottom-right-radius: 16px;
+          .we_recomended {
+            margin: 30px 0px 25px 25px;
+            color: $blue;
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .recomended_item {
+            width: 75%;
+            margin-left: 25px;
+            h2 {
+              color: $azure;
+              // font-size: 20px;
+              font-size: clamp(16px, 2vw, 20px);
+              line-height: 26px;
+              font-weight: 500;
+            }
+            p {
+              // font-size: 16px;
+              font-size: clamp(14px, 2vw, 16px);
+              line-height: 26px;
+              color: #a9a9a9;
+            }
+          }
+          .recomended_item_price {
+            margin: 30px 25px;
+            color: $azure;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 500;
+          }
+          img {
+            position: absolute;
+            bottom: 30px;
+            right: -70px;
+            width: 200px;
+            height: 200px;
+          }
+        }
+        &:hover {
+          .hover_container {
+            @include displayCenter(space-between, flex-start);
+            animation: topAnimation 0.3s linear;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
       }
+      .beds {
+        position: relative;
+        border: none;
+        .hover_container {
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          top: 79.5px;
+          left: 0px;
+          // width: 700px;
+          width: clamp(300px, 47vw, 700px);
+          height: max-content;
+          background-color: $white;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          .hover_container_sections {
+            @include displayCenter(center, center);
+            flex-direction: column;
+            width: 40%;
+            padding: 25px 20px;
+            // background-color: $white;
+            .item_hover {
+              @include displayCenter(space-between, center);
+              border-left: none;
+              border-bottom: 1px solid $light_grey;
+              width: 100%;
+              // padding: 15px 10px;
+              padding-top: clamp(10px, 2vw, 20px);
+               a {
+                text-transform: uppercase;
+                color: $azure;
+              }
+              i {
+                color: $light_grey;
+              }
+              &:hover {
+                a {
+                  color: $orange;
+                }
+                i {
+                  color: $orange;
+                }
+              }
+            }
+          }
+        }
+        .recomend_product_container {
+          @include displayCenter(flex-start, flex-start);
+          flex-direction: column;
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+          width: 60%;
+          height: 100%;
+          background-color: $orange;
+          // background-color: $light_grey;
+          border-bottom-right-radius: 16px;
+          .we_recomended {
+            margin: 30px 0px 25px 25px;
+            color: $blue;
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .recomended_item {
+            width: 75%;
+            margin-left: 25px;
+            h2 {
+              color: $azure;
+              // font-size: 20px;
+              font-size: clamp(16px, 2vw, 20px);
+              line-height: 26px;
+              font-weight: 500;
+            }
+            p {
+              // font-size: 16px;
+              font-size: clamp(14px, 2vw, 16px);
+              line-height: 26px;
+              color: #a9a9a9;
+            }
+          }
+          .recomended_item_price {
+            margin: 30px 25px;
+            color: $azure;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 500;
+          }
+          img {
+            position: absolute;
+            bottom: 30px;
+            right: -100px;
+            width: 350px;
+            height: 140px;
+          }
+        }
+        &:hover {
+          .hover_container {
+            @include displayCenter(space-between, flex-start);
+            animation: topAnimation 0.3s linear;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      .tables {
+        position: relative;
+        border: none;
+        .hover_container {
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          top: 79.5px;
+          left: 0px;
+          // width: 700px;
+          width: clamp(300px, 47vw, 700px);
+          height: max-content;
+          background-color: $white;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          .hover_container_sections {
+            @include displayCenter(center, center);
+            flex-direction: column;
+            width: 40%;
+            padding: 25px 20px;
+            // background-color: $white;
+            .item_hover {
+              @include displayCenter(space-between, center);
+              border-left: none;
+              border-bottom: 1px solid $light_grey;
+              width: 100%;
+              // padding: 15px 10px;
+              padding-top: clamp(10px, 2vw, 20px);
+               a {
+                text-transform: uppercase;
+                color: $azure;
+              }
+              i {
+                color: $light_grey;
+              }
+              &:hover {
+                a {
+                  color: $orange;
+                }
+                i {
+                  color: $orange;
+                }
+              }
+            }
+          }
+        }
+        .recomend_product_container {
+          @include displayCenter(flex-start, flex-start);
+          flex-direction: column;
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+          width: 60%;
+          height: 100%;
+          background-color: $orange;
+          // background-color: $light_grey;
+          border-bottom-right-radius: 16px;
+          .we_recomended {
+            margin: 30px 0px 25px 25px;
+            color: $blue;
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .recomended_item {
+            width: 75%;
+            margin-left: 25px;
+            h2 {
+              color: $azure;
+              // font-size: 20px;
+              font-size: clamp(16px, 2vw, 20px);
+              line-height: 26px;
+              font-weight: 500;
+            }
+            p {
+              // font-size: 16px;
+              font-size: clamp(14px, 2vw, 16px);
+              line-height: 26px;
+              color: #a9a9a9;
+            }
+          }
+          .recomended_item_price {
+            margin: 30px 25px;
+            color: $azure;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 500;
+          }
+          img {
+            position: absolute;
+            bottom: 30px;
+            right: -95px;
+            width: 200px;
+            height: 150px;
+          }
+        }
+        &:hover {
+          .hover_container {
+            @include displayCenter(space-between, flex-start);
+            animation: topAnimation 0.3s linear;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      .desks {
+        position: relative;
+        border: none;
+        .hover_container {
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          top: 79.5px;
+          left: 0px;
+          // width: 700px;
+          width: clamp(300px, 47vw, 700px);
+          height: max-content;
+          background-color: $white;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          .hover_container_sections {
+            @include displayCenter(center, center);
+            flex-direction: column;
+            width: 40%;
+            padding: 25px 20px;
+            // background-color: $white;
+            .item_hover {
+              @include displayCenter(space-between, center);
+              border-left: none;
+              border-bottom: 1px solid $light_grey;
+              width: 100%;
+              // padding: 15px 10px;
+              padding-top: clamp(10px, 2vw, 20px);
+              padding-left: 10px;
+              padding-right: 10px;
+               a {
+                text-transform: uppercase;
+                color: $azure;
+              }
+              i {
+                color: $light_grey;
+              }
+              &:hover {
+                a {
+                  color: $orange;
+                }
+                i {
+                  color: $orange;
+                }
+              }
+            }
+          }
+        }
+        .recomend_product_container {
+          @include displayCenter(flex-start, flex-start);
+          flex-direction: column;
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+          width: 60%;
+          height: 100%;
+          background-color: $orange;
+          // background-color: $light_grey;
+          border-bottom-right-radius: 16px;
+          .we_recomended {
+            margin: 30px 0px 25px 25px;
+            color: $blue;
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .recomended_item {
+            width: 75%;
+            margin-left: 25px;
+            h2 {
+              color: $azure;
+              // font-size: 20px;
+              font-size: clamp(16px, 2vw, 20px);
+              line-height: 26px;
+              font-weight: 500;
+            }
+            p {
+              // font-size: 16px;
+              font-size: clamp(14px, 2vw, 16px);
+              line-height: 26px;
+              color: #a9a9a9;
+            }
+          }
+          .recomended_item_price {
+            margin: 30px 25px;
+            color: $azure;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 500;
+          }
+          img {
+            position: absolute;
+            bottom: 30px;
+            right: -90px;
+            width: 220px;
+            height: 100px;
+          }
+        }
+        &:hover {
+          .hover_container {
+            @include displayCenter(space-between, flex-start);
+            animation: topAnimation 0.3s linear;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      .cabinets {
+        position: relative;
+        border: none;
+        .hover_container {
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          top: 79.5px;
+          right: 0px;
+          // width: 700px;
+          width: clamp(300px, 47vw, 700px);
+          height: max-content;
+          background-color: $white;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          .hover_container_sections {
+            @include displayCenter(center, center);
+            flex-direction: column;
+            width: 40%;
+            padding: 25px 20px;
+            // background-color: $white;
+            .item_hover {
+              @include displayCenter(space-between, center);
+              border-left: none;
+              border-bottom: 1px solid $light_grey;
+              width: 100%;
+              // padding: 15px 10px;
+              padding-top: clamp(10px, 2vw, 20px);
+               a {
+                text-transform: uppercase;
+                color: $azure;
+              }
+              i {
+                color: $light_grey;
+              }
+              &:hover {
+                a {
+                  color: $orange;
+                }
+                i {
+                  color: $orange;
+                }
+              }
+            }
+          }
+        }
+        .recomend_product_container {
+          @include displayCenter(flex-start, flex-start);
+          flex-direction: column;
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+          width: 60%;
+          height: 100%;
+          background-color: $orange;
+          // background-color: $light_grey;
+          border-bottom-right-radius: 16px;
+          .we_recomended {
+            margin: 30px 0px 25px 25px;
+            color: $blue;
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .recomended_item {
+            width: 75%;
+            margin-left: 25px;
+            h2 {
+              color: $azure;
+              // font-size: 20px;
+              font-size: clamp(16px, 2vw, 20px);
+              line-height: 26px;
+              font-weight: 500;
+            }
+            p {
+              // font-size: 16px;
+              font-size: clamp(14px, 2vw, 16px);
+              line-height: 26px;
+              color: #a9a9a9;
+            }
+          }
+          .recomended_item_price {
+            margin: 30px 25px;
+            color: $azure;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 500;
+          }
+          img {
+            position: absolute;
+            bottom: 30px;
+            right: -92px;
+            width: 200px;
+            height: 150px;
+          }
+        }
+        &:hover {
+          .hover_container {
+            @include displayCenter(space-between, flex-start);
+            animation: topAnimation 0.3s linear;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+      .lighting {
+        position: relative;
+        border: none;
+        .hover_container {
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          top: 79.5px;
+          right: 0px;
+          // width: 700px;
+          width: clamp(300px, 47vw, 700px);
+          height: max-content;
+          background-color: $white;
+          border-bottom-left-radius: 16px;
+          border-bottom-right-radius: 16px;
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          .hover_container_sections {
+            @include displayCenter(center, center);
+            flex-direction: column;
+            width: 40%;
+            padding: 25px 20px;
+            // background-color: $white;
+            .item_hover {
+              @include displayCenter(space-between, center);
+              border-left: none;
+              border-bottom: 1px solid $light_grey;
+              width: 100%;
+              // padding: 15px 10px;
+              padding-top: clamp(10px, 2vw, 20px);
+               a {
+                text-transform: uppercase;
+                color: $azure;
+              }
+              i {
+                color: $light_grey;
+              }
+              &:hover {
+                a {
+                  color: $orange;
+                }
+                i {
+                  color: $orange;
+                }
+              }
+            }
+          }
+        }
+        .recomend_product_container {
+          @include displayCenter(flex-start, flex-start);
+          flex-direction: column;
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+          width: 60%;
+          height: 100%;
+          background-color: $orange;
+          // background-color: $light_grey;
+          border-bottom-right-radius: 16px;
+          .we_recomended {
+            margin: 30px 0px 25px 25px;
+            color: $blue;
+            font-size: 14px;
+            line-height: 18px;
+          }
+          .recomended_item {
+            width: 75%;
+            margin-left: 25px;
+            h2 {
+              color: $azure;
+              // font-size: 20px;
+              font-size: clamp(16px, 2vw, 20px);
+              line-height: 26px;
+              font-weight: 500;
+            }
+            p {
+              // font-size: 16px;
+              font-size: clamp(14px, 2vw, 16px);
+              line-height: 26px;
+              color: #a9a9a9;
+            }
+          }
+          .recomended_item_price {
+            margin: 30px 25px;
+            color: $azure;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 500;
+          }
+          img {
+            position: absolute;
+            bottom: 30px;
+            right: -90px;
+            width: 210px;
+            height: 150px;
+          }
+        }
+        &:hover {
+          .hover_container {
+            @include displayCenter(space-between, flex-start);
+            animation: topAnimation 0.3s linear;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+
       .sales {
         padding-top: 15px;
         padding-bottom: 10px;

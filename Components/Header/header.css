@@ -10,6 +10,18 @@
     width: 200px;
   }
 }
+@keyframes topAnimation {
+  0% {
+    top: 100px;
+  }
+  100% {
+    top: 79.5px;
+  }
+}
+body {
+  overflow: hidden;
+}
+
 header {
   display: flex;
   justify-content: center;
@@ -17,6 +29,7 @@ header {
   flex-direction: column;
   width: 100vw;
   padding: 1px 42px;
+  background-color: #ffffff;
 }
 header .header_container {
   display: flex;
@@ -185,6 +198,7 @@ header nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   width: 100%;
   max-width: 1220px;
 }
@@ -243,27 +257,19 @@ header nav ul .chairs {
 }
 header nav ul .chairs .hover_container {
   position: absolute;
-  display: none;
   opacity: 0;
-  top: 120px;
+  visibility: hidden;
+  top: 79.5px;
   left: 0px;
-  width: 745px;
-  height: -moz-min-content;
-  height: min-content;
+  width: clamp(300px, 47vw, 700px);
+  height: -moz-max-content;
+  height: max-content;
   background-color: #ffffff;
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
-  transition: opacity 0.3s ease, display 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-header nav ul .chairs:hover .hover_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  top: 79.5px;
-  left: 0px;
-  opacity: 1;
-}
-header nav ul .chairs:hover .hover_container .hover_container_sections {
+header nav ul .chairs .hover_container .hover_container_sections {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -271,71 +277,605 @@ header nav ul .chairs:hover .hover_container .hover_container_sections {
   width: 40%;
   padding: 25px 20px;
 }
-header nav ul .chairs:hover .hover_container .hover_container_sections .chairs_hover {
+header nav ul .chairs .hover_container .hover_container_sections .item_hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-left: none;
   border-bottom: 1px solid #f5f5f5;
   width: 100%;
-  padding: 15px 10px;
+  padding-top: clamp(10px, 2vw, 20px);
 }
-header nav ul .chairs:hover .hover_container .hover_container_sections .chairs_hover a {
+header nav ul .chairs .hover_container .hover_container_sections .item_hover a {
+  text-transform: uppercase;
   color: #0b3954;
 }
-header nav ul .chairs:hover .hover_container .hover_container_sections .chairs_hover i {
+header nav ul .chairs .hover_container .hover_container_sections .item_hover i {
   color: #f5f5f5;
 }
-header nav ul .chairs:hover .hover_container .hover_container_sections .chairs_hover:hover a {
+header nav ul .chairs .hover_container .hover_container_sections .item_hover:hover a {
   color: #ffb128;
 }
-header nav ul .chairs:hover .hover_container .hover_container_sections .chairs_hover:hover i {
+header nav ul .chairs .hover_container .hover_container_sections .item_hover:hover i {
   color: #ffb128;
 }
-header nav ul .chairs:hover .hover_container .recomend_product_container {
+header nav ul .chairs .recomend_product_container {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  width: 70%;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 60%;
   height: 100%;
   background-color: #ffb128;
   border-bottom-right-radius: 16px;
 }
-header nav ul .chairs:hover .hover_container .recomend_product_container .we_recomended {
+header nav ul .chairs .recomend_product_container .we_recomended {
   margin: 30px 0px 25px 25px;
   color: #1389bc;
   font-size: 14px;
   line-height: 18px;
 }
-header nav ul .chairs:hover .hover_container .recomend_product_container .recomended_item {
+header nav ul .chairs .recomend_product_container .recomended_item {
   width: 75%;
   margin-left: 25px;
 }
-header nav ul .chairs:hover .hover_container .recomend_product_container .recomended_item h2 {
+header nav ul .chairs .recomend_product_container .recomended_item h2 {
   color: #0b3954;
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   line-height: 26px;
   font-weight: 500;
 }
-header nav ul .chairs:hover .hover_container .recomend_product_container .recomended_item p {
-  font-size: 16px;
+header nav ul .chairs .recomend_product_container .recomended_item p {
+  font-size: clamp(14px, 2vw, 16px);
   line-height: 26px;
   color: #a9a9a9;
 }
-header nav ul .chairs:hover .hover_container .recomend_product_container .recomended_item_price {
+header nav ul .chairs .recomend_product_container .recomended_item_price {
   margin: 30px 25px;
   color: #0b3954;
   font-size: 20px;
   line-height: 26px;
   font-weight: 500;
 }
-header nav ul .chairs:hover .hover_container .recomend_product_container img {
+header nav ul .chairs .recomend_product_container img {
   position: absolute;
   bottom: 30px;
   right: -70px;
   width: 200px;
   height: 200px;
+}
+header nav ul .chairs:hover .hover_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  animation: topAnimation 0.3s linear;
+  opacity: 1;
+  visibility: visible;
+}
+header nav ul .beds {
+  position: relative;
+  border: none;
+}
+header nav ul .beds .hover_container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 79.5px;
+  left: 0px;
+  width: clamp(300px, 47vw, 700px);
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #ffffff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+header nav ul .beds .hover_container .hover_container_sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  padding: 25px 20px;
+}
+header nav ul .beds .hover_container .hover_container_sections .item_hover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: none;
+  border-bottom: 1px solid #f5f5f5;
+  width: 100%;
+  padding-top: clamp(10px, 2vw, 20px);
+}
+header nav ul .beds .hover_container .hover_container_sections .item_hover a {
+  text-transform: uppercase;
+  color: #0b3954;
+}
+header nav ul .beds .hover_container .hover_container_sections .item_hover i {
+  color: #f5f5f5;
+}
+header nav ul .beds .hover_container .hover_container_sections .item_hover:hover a {
+  color: #ffb128;
+}
+header nav ul .beds .hover_container .hover_container_sections .item_hover:hover i {
+  color: #ffb128;
+}
+header nav ul .beds .recomend_product_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 60%;
+  height: 100%;
+  background-color: #ffb128;
+  border-bottom-right-radius: 16px;
+}
+header nav ul .beds .recomend_product_container .we_recomended {
+  margin: 30px 0px 25px 25px;
+  color: #1389bc;
+  font-size: 14px;
+  line-height: 18px;
+}
+header nav ul .beds .recomend_product_container .recomended_item {
+  width: 75%;
+  margin-left: 25px;
+}
+header nav ul .beds .recomend_product_container .recomended_item h2 {
+  color: #0b3954;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .beds .recomend_product_container .recomended_item p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 26px;
+  color: #a9a9a9;
+}
+header nav ul .beds .recomend_product_container .recomended_item_price {
+  margin: 30px 25px;
+  color: #0b3954;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .beds .recomend_product_container img {
+  position: absolute;
+  bottom: 30px;
+  right: -100px;
+  width: 350px;
+  height: 140px;
+}
+header nav ul .beds:hover .hover_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  animation: topAnimation 0.3s linear;
+  opacity: 1;
+  visibility: visible;
+}
+header nav ul .tables {
+  position: relative;
+  border: none;
+}
+header nav ul .tables .hover_container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 79.5px;
+  left: 0px;
+  width: clamp(300px, 47vw, 700px);
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #ffffff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+header nav ul .tables .hover_container .hover_container_sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  padding: 25px 20px;
+}
+header nav ul .tables .hover_container .hover_container_sections .item_hover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: none;
+  border-bottom: 1px solid #f5f5f5;
+  width: 100%;
+  padding-top: clamp(10px, 2vw, 20px);
+}
+header nav ul .tables .hover_container .hover_container_sections .item_hover a {
+  text-transform: uppercase;
+  color: #0b3954;
+}
+header nav ul .tables .hover_container .hover_container_sections .item_hover i {
+  color: #f5f5f5;
+}
+header nav ul .tables .hover_container .hover_container_sections .item_hover:hover a {
+  color: #ffb128;
+}
+header nav ul .tables .hover_container .hover_container_sections .item_hover:hover i {
+  color: #ffb128;
+}
+header nav ul .tables .recomend_product_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 60%;
+  height: 100%;
+  background-color: #ffb128;
+  border-bottom-right-radius: 16px;
+}
+header nav ul .tables .recomend_product_container .we_recomended {
+  margin: 30px 0px 25px 25px;
+  color: #1389bc;
+  font-size: 14px;
+  line-height: 18px;
+}
+header nav ul .tables .recomend_product_container .recomended_item {
+  width: 75%;
+  margin-left: 25px;
+}
+header nav ul .tables .recomend_product_container .recomended_item h2 {
+  color: #0b3954;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .tables .recomend_product_container .recomended_item p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 26px;
+  color: #a9a9a9;
+}
+header nav ul .tables .recomend_product_container .recomended_item_price {
+  margin: 30px 25px;
+  color: #0b3954;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .tables .recomend_product_container img {
+  position: absolute;
+  bottom: 30px;
+  right: -95px;
+  width: 200px;
+  height: 150px;
+}
+header nav ul .tables:hover .hover_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  animation: topAnimation 0.3s linear;
+  opacity: 1;
+  visibility: visible;
+}
+header nav ul .desks {
+  position: relative;
+  border: none;
+}
+header nav ul .desks .hover_container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 79.5px;
+  left: 0px;
+  width: clamp(300px, 47vw, 700px);
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #ffffff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+header nav ul .desks .hover_container .hover_container_sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  padding: 25px 20px;
+}
+header nav ul .desks .hover_container .hover_container_sections .item_hover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: none;
+  border-bottom: 1px solid #f5f5f5;
+  width: 100%;
+  padding-top: clamp(10px, 2vw, 20px);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+header nav ul .desks .hover_container .hover_container_sections .item_hover a {
+  text-transform: uppercase;
+  color: #0b3954;
+}
+header nav ul .desks .hover_container .hover_container_sections .item_hover i {
+  color: #f5f5f5;
+}
+header nav ul .desks .hover_container .hover_container_sections .item_hover:hover a {
+  color: #ffb128;
+}
+header nav ul .desks .hover_container .hover_container_sections .item_hover:hover i {
+  color: #ffb128;
+}
+header nav ul .desks .recomend_product_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 60%;
+  height: 100%;
+  background-color: #ffb128;
+  border-bottom-right-radius: 16px;
+}
+header nav ul .desks .recomend_product_container .we_recomended {
+  margin: 30px 0px 25px 25px;
+  color: #1389bc;
+  font-size: 14px;
+  line-height: 18px;
+}
+header nav ul .desks .recomend_product_container .recomended_item {
+  width: 75%;
+  margin-left: 25px;
+}
+header nav ul .desks .recomend_product_container .recomended_item h2 {
+  color: #0b3954;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .desks .recomend_product_container .recomended_item p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 26px;
+  color: #a9a9a9;
+}
+header nav ul .desks .recomend_product_container .recomended_item_price {
+  margin: 30px 25px;
+  color: #0b3954;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .desks .recomend_product_container img {
+  position: absolute;
+  bottom: 30px;
+  right: -90px;
+  width: 220px;
+  height: 100px;
+}
+header nav ul .desks:hover .hover_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  animation: topAnimation 0.3s linear;
+  opacity: 1;
+  visibility: visible;
+}
+header nav ul .cabinets {
+  position: relative;
+  border: none;
+}
+header nav ul .cabinets .hover_container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 79.5px;
+  right: 0px;
+  width: clamp(300px, 47vw, 700px);
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #ffffff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+header nav ul .cabinets .hover_container .hover_container_sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  padding: 25px 20px;
+}
+header nav ul .cabinets .hover_container .hover_container_sections .item_hover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: none;
+  border-bottom: 1px solid #f5f5f5;
+  width: 100%;
+  padding-top: clamp(10px, 2vw, 20px);
+}
+header nav ul .cabinets .hover_container .hover_container_sections .item_hover a {
+  text-transform: uppercase;
+  color: #0b3954;
+}
+header nav ul .cabinets .hover_container .hover_container_sections .item_hover i {
+  color: #f5f5f5;
+}
+header nav ul .cabinets .hover_container .hover_container_sections .item_hover:hover a {
+  color: #ffb128;
+}
+header nav ul .cabinets .hover_container .hover_container_sections .item_hover:hover i {
+  color: #ffb128;
+}
+header nav ul .cabinets .recomend_product_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 60%;
+  height: 100%;
+  background-color: #ffb128;
+  border-bottom-right-radius: 16px;
+}
+header nav ul .cabinets .recomend_product_container .we_recomended {
+  margin: 30px 0px 25px 25px;
+  color: #1389bc;
+  font-size: 14px;
+  line-height: 18px;
+}
+header nav ul .cabinets .recomend_product_container .recomended_item {
+  width: 75%;
+  margin-left: 25px;
+}
+header nav ul .cabinets .recomend_product_container .recomended_item h2 {
+  color: #0b3954;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .cabinets .recomend_product_container .recomended_item p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 26px;
+  color: #a9a9a9;
+}
+header nav ul .cabinets .recomend_product_container .recomended_item_price {
+  margin: 30px 25px;
+  color: #0b3954;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .cabinets .recomend_product_container img {
+  position: absolute;
+  bottom: 30px;
+  right: -92px;
+  width: 200px;
+  height: 150px;
+}
+header nav ul .cabinets:hover .hover_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  animation: topAnimation 0.3s linear;
+  opacity: 1;
+  visibility: visible;
+}
+header nav ul .lighting {
+  position: relative;
+  border: none;
+}
+header nav ul .lighting .hover_container {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 79.5px;
+  right: 0px;
+  width: clamp(300px, 47vw, 700px);
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #ffffff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+header nav ul .lighting .hover_container .hover_container_sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  padding: 25px 20px;
+}
+header nav ul .lighting .hover_container .hover_container_sections .item_hover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: none;
+  border-bottom: 1px solid #f5f5f5;
+  width: 100%;
+  padding-top: clamp(10px, 2vw, 20px);
+}
+header nav ul .lighting .hover_container .hover_container_sections .item_hover a {
+  text-transform: uppercase;
+  color: #0b3954;
+}
+header nav ul .lighting .hover_container .hover_container_sections .item_hover i {
+  color: #f5f5f5;
+}
+header nav ul .lighting .hover_container .hover_container_sections .item_hover:hover a {
+  color: #ffb128;
+}
+header nav ul .lighting .hover_container .hover_container_sections .item_hover:hover i {
+  color: #ffb128;
+}
+header nav ul .lighting .recomend_product_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 60%;
+  height: 100%;
+  background-color: #ffb128;
+  border-bottom-right-radius: 16px;
+}
+header nav ul .lighting .recomend_product_container .we_recomended {
+  margin: 30px 0px 25px 25px;
+  color: #1389bc;
+  font-size: 14px;
+  line-height: 18px;
+}
+header nav ul .lighting .recomend_product_container .recomended_item {
+  width: 75%;
+  margin-left: 25px;
+}
+header nav ul .lighting .recomend_product_container .recomended_item h2 {
+  color: #0b3954;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .lighting .recomend_product_container .recomended_item p {
+  font-size: clamp(14px, 2vw, 16px);
+  line-height: 26px;
+  color: #a9a9a9;
+}
+header nav ul .lighting .recomend_product_container .recomended_item_price {
+  margin: 30px 25px;
+  color: #0b3954;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+}
+header nav ul .lighting .recomend_product_container img {
+  position: absolute;
+  bottom: 30px;
+  right: -90px;
+  width: 210px;
+  height: 150px;
+}
+header nav ul .lighting:hover .hover_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  animation: topAnimation 0.3s linear;
+  opacity: 1;
+  visibility: visible;
 }
 header nav ul .sales {
   padding-top: 15px;
