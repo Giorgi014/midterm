@@ -1097,6 +1097,9 @@ header {
           transform: translate(-50%);
           width: 80%;
           height: 40px;
+          input{
+          background-color: $white;
+          }
           #close_search_button {
             @include displayCenter(center, center);
             position: absolute;

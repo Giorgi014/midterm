@@ -1,9 +1,9 @@
 const BURGER_MENU_BUTTON = document.getElementById("burger_menu");
 const NAV_LIST = document.querySelector("ul");
 const RESPONSIVE_SEARCH_BUTTON = document.getElementById("res_search");
-const CLOSE_BUTTON = document.querySelector("i");
+const CLOSE_BUTTON = document.getElementById("close_button");
 const SEARCH_CONTAINER = document.getElementsByClassName("search_container");
-const CLOSE_SEARCH_BUTTON = document.getElementById("close_search_button");
+const SEARCH_CLOSE_BOTTON = document.getElementById("close_search_button");
 
 const responsiveMenu = () => {
   const isActive = BURGER_MENU_BUTTON.classList.toggle("active");
@@ -14,22 +14,25 @@ const responsiveMenu = () => {
   CLOSE_BUTTON.classList.toggle("burger_menu", !isActive);
 };
 
-const responsiveSerch = () => {
-  const activeSearch = RESPONSIVE_SEARCH_BUTTON.classList.toggle("active_search");
+const responsiveSearch = () => {
+  const isActive = BURGER_MENU_BUTTON.classList.toggle("active_search");
 
-  SEARCH_CONTAINER[0].classList.toggle("active_search", activeSearch);
+  SEARCH_CONTAINER[0].classList.toggle("active_search", isActive);
 
-  CLOSE_SEARCH_BUTTON.classList.toggle("fa-xmark", activeSearch);
-  CLOSE_SEARCH_BUTTON.classList.toggle("res_search", !activeSearch);
+  SEARCH_CLOSE_BOTTON.classList.toggle("fa-xmark", isActive);
+  SEARCH_CLOSE_BOTTON.classList.toggle("res_search", !isActive);
 };
 
 const closeMenu = () => {
   BURGER_MENU_BUTTON.classList.remove("active");
   NAV_LIST.classList.remove("active");
-  CLOSE_SEARCH_BUTTON.classList.remove("fa-xmark");
-  CLOSE_SEARCH_BUTTON.classList.remove("active_search");
-  SEARCH_CONTAINER[0].classList.remove("active_search");
   CLOSE_BUTTON.classList.remove("fa-xmark");
+};
+
+const closeSearch = () => {
+  SEARCH_CONTAINER[0].classList.remove("active_search");
+  RESPONSIVE_SEARCH_BUTTON.classList.remove("active_search");
+  SEARCH_CLOSE_BOTTON.classList.remove("fa-xmark");
 };
 
 BURGER_MENU_BUTTON.addEventListener("click", () => {
@@ -40,5 +43,8 @@ CLOSE_BUTTON.addEventListener("click", () => {
 });
 
 RESPONSIVE_SEARCH_BUTTON.addEventListener("click", () => {
-  responsiveSerch();
+  responsiveSearch();
+});
+SEARCH_CLOSE_BOTTON.addEventListener("click", () => {
+  closeSearch();
 });

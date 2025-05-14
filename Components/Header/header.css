@@ -1031,6 +1031,9 @@ header nav ul .sales:hover {
     width: 80%;
     height: 40px;
   }
+  header .header_container .search_container.active_search input {
+    background-color: #ffffff;
+  }
   header .header_container .search_container.active_search #close_search_button {
     display: flex;
     justify-content: center;
