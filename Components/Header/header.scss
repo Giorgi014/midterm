@@ -289,9 +289,10 @@ header {
               border-bottom: 1px solid $light_grey;
               width: 100%;
               padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
-               a {
+              a {
                 text-transform: uppercase;
                 color: $azure;
+                font-size: 16px;
               }
               i {
                 color: $light_grey;
@@ -350,10 +351,10 @@ header {
           }
           img {
             position: absolute;
-            bottom: 30px;
+            bottom: clamp(10px, 3vh, 30px);
             right: -70px;
-            width: 200px;
-            height: 200px;
+            width: clamp(150px, 15vw, 200px);
+            height: clamp(150px, 15vw, 200px);
           }
         }
         &:hover {
@@ -395,7 +396,7 @@ header {
               // padding: 15px 10px;
               padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
               padding-bottom: clamp(10px, 2vw, 20px);
-               a {
+              a {
                 text-transform: uppercase;
                 color: $azure;
               }
@@ -502,7 +503,7 @@ header {
               // padding: 15px 10px;
               padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
               padding-bottom: clamp(10px, 2vw, 20px);
-               a {
+              a {
                 text-transform: uppercase;
                 color: $azure;
               }
@@ -610,7 +611,7 @@ header {
               padding-bottom: clamp(10px, 2vw, 20px);
               padding-left: 10px;
               padding-right: 10px;
-               a {
+              a {
                 text-transform: uppercase;
                 color: $azure;
               }
@@ -673,8 +674,8 @@ header {
             position: absolute;
             bottom: 30px;
             right: -90px;
-            width: 220px;
-            height: 100px;
+            width: clamp(170px, 15vw, 220px);
+            height: clamp(90px, 10vh, 100px);
           }
         }
         &:hover {
@@ -716,7 +717,7 @@ header {
               // padding: 15px 10px;
               padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
               padding-bottom: clamp(10px, 2vw, 20px);
-               a {
+              a {
                 text-transform: uppercase;
                 color: $azure;
               }
@@ -822,7 +823,7 @@ header {
               // padding: 15px 10px;
               padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
               padding-bottom: clamp(10px, 2vw, 20px);
-               a {
+              a {
                 text-transform: uppercase;
                 color: $azure;
               }
@@ -929,6 +930,88 @@ header {
 }
 
 // RESPONSIVE ============================================
+
+@media screen and (max-width: 1440px) {
+  header {
+    nav {
+      ul {
+        .chairs {
+          .hover_container {
+            .hover_container_sections {
+              .item_hover {
+                a {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+
+        .beds {
+          .hover_container {
+            .hover_container_sections {
+              .item_hover {
+                a {
+                  font-size: 12px;
+                }
+              }
+            }
+            .recomend_product_container {
+              img {
+                right: -150px;
+                height: 120px;
+              }
+            }
+          }
+        }
+        .tables {
+          .hover_container {
+            .hover_container_sections {
+              .item_hover {
+                a {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+        .desks {
+          .hover_container {
+            .hover_container_sections {
+              .item_hover {
+                a {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+        .cabinets {
+          .hover_container {
+            .hover_container_sections {
+              .item_hover {
+                a {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+        .lighting {
+          .hover_container {
+            .hover_container_sections {
+              .item_hover {
+                a {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 960px) {
   header {

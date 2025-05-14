@@ -289,6 +289,7 @@ header nav ul .chairs .hover_container .hover_container_sections .item_hover {
 header nav ul .chairs .hover_container .hover_container_sections .item_hover a {
   text-transform: uppercase;
   color: #0b3954;
+  font-size: 16px;
 }
 header nav ul .chairs .hover_container .hover_container_sections .item_hover i {
   color: #f5f5f5;
@@ -342,10 +343,10 @@ header nav ul .chairs .recomend_product_container .recomended_item_price {
 }
 header nav ul .chairs .recomend_product_container img {
   position: absolute;
-  bottom: 30px;
+  bottom: clamp(10px, 3vh, 30px);
   right: -70px;
-  width: 200px;
-  height: 200px;
+  width: clamp(150px, 15vw, 200px);
+  height: clamp(150px, 15vw, 200px);
 }
 header nav ul .chairs:hover .hover_container {
   display: flex;
@@ -661,8 +662,8 @@ header nav ul .desks .recomend_product_container img {
   position: absolute;
   bottom: 30px;
   right: -90px;
-  width: 220px;
-  height: 100px;
+  width: clamp(170px, 15vw, 220px);
+  height: clamp(90px, 10vh, 100px);
 }
 header nav ul .desks:hover .hover_container {
   display: flex;
@@ -908,6 +909,30 @@ header nav ul .sales:hover {
   transition: 0.2s ease-in-out;
 }
 
+@media screen and (max-width: 1440px) {
+  header nav ul .chairs .hover_container .hover_container_sections .item_hover a {
+    font-size: 12px;
+  }
+  header nav ul .beds .hover_container .hover_container_sections .item_hover a {
+    font-size: 12px;
+  }
+  header nav ul .beds .hover_container .recomend_product_container img {
+    right: -150px;
+    height: 120px;
+  }
+  header nav ul .tables .hover_container .hover_container_sections .item_hover a {
+    font-size: 12px;
+  }
+  header nav ul .desks .hover_container .hover_container_sections .item_hover a {
+    font-size: 12px;
+  }
+  header nav ul .cabinets .hover_container .hover_container_sections .item_hover a {
+    font-size: 12px;
+  }
+  header nav ul .lighting .hover_container .hover_container_sections .item_hover a {
+    font-size: 12px;
+  }
+}
 @media screen and (max-width: 960px) {
   header {
     position: fixed;
