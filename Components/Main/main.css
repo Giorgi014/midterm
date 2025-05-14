@@ -6,6 +6,26 @@
   font-family: "Poppins Medium";
   src: url(../../assets/font/Poppins-Medium.ttf) format("woff2");
 }
+@keyframes progresiveWidth {
+  0% {
+    width: 24px;
+    height: 24px;
+  }
+  100% {
+    width: 70px;
+    height: 70px;
+  }
+}
+@keyframes progresiveSecondWidth {
+  0% {
+    width: 24px;
+    height: 24px;
+  }
+  100% {
+    width: 46.67px;
+    height: 46.67px;
+  }
+}
 main {
   display: flex;
   justify-content: center;
@@ -114,34 +134,50 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons 
 }
 main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 100px;
+  right: 150px;
   width: -moz-max-content;
   width: max-content;
 }
-main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap_layer {
+main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 70px;
   height: 70px;
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out, scale 0.3s ease-in-out;
+}
+main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap:hover {
+  scale: 1.1;
+}
+main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap:hover .rs_wrap_layer {
+  animation: progresiveWidth 0.5s linear forwards;
+}
+main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap:hover .rs_wrap_layer_border {
+  animation: progresiveSecondWidth 0.2s linear forwards;
+}
+main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs_wrap_layer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 0.33px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.1490196078);
   cursor: pointer;
-  transition: transform 0.3s ease-in-out;
 }
-main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap_layer .rs_wrap_layer_border {
+main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs_wrap_layer .rs_wrap_layer_border {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 46.67px;
-  height: 46.67px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 0.33px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
-main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap_layer .rs_wrap_layer_border .rs_wrap_layer_btn {
+main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs_wrap_layer .rs_wrap_layer_border .rs_wrap_layer_btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -153,7 +189,4 @@ main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap_lay
   color: #ffffff;
   font-size: 14px;
   cursor: pointer;
-}
-main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap_layer:hover {
-  transform: scale(1.2);
 }/*# sourceMappingURL=main.css.map */
