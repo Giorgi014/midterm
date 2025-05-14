@@ -288,8 +288,7 @@ header {
               border-left: none;
               border-bottom: 1px solid $light_grey;
               width: 100%;
-              // padding: 15px 10px;
-              padding-top: clamp(10px, 2vw, 20px);
+              padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
                a {
                 text-transform: uppercase;
                 color: $azure;
@@ -394,7 +393,8 @@ header {
               border-bottom: 1px solid $light_grey;
               width: 100%;
               // padding: 15px 10px;
-              padding-top: clamp(10px, 2vw, 20px);
+              padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
+              padding-bottom: clamp(10px, 2vw, 20px);
                a {
                 text-transform: uppercase;
                 color: $azure;
@@ -456,10 +456,11 @@ header {
           }
           img {
             position: absolute;
-            bottom: 30px;
+            bottom: clamp(10px, 2vw, 30px);
             right: -100px;
-            width: 350px;
-            height: 140px;
+            // width: 350px;
+            width: clamp(150px, 30vw, 350px);
+            height: 130px;
           }
         }
         &:hover {
@@ -499,7 +500,8 @@ header {
               border-bottom: 1px solid $light_grey;
               width: 100%;
               // padding: 15px 10px;
-              padding-top: clamp(10px, 2vw, 20px);
+              padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
+              padding-bottom: clamp(10px, 2vw, 20px);
                a {
                 text-transform: uppercase;
                 color: $azure;
@@ -604,7 +606,8 @@ header {
               border-bottom: 1px solid $light_grey;
               width: 100%;
               // padding: 15px 10px;
-              padding-top: clamp(10px, 2vw, 20px);
+              padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
+              padding-bottom: clamp(10px, 2vw, 20px);
               padding-left: 10px;
               padding-right: 10px;
                a {
@@ -711,7 +714,8 @@ header {
               border-bottom: 1px solid $light_grey;
               width: 100%;
               // padding: 15px 10px;
-              padding-top: clamp(10px, 2vw, 20px);
+              padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
+              padding-bottom: clamp(10px, 2vw, 20px);
                a {
                 text-transform: uppercase;
                 color: $azure;
@@ -816,7 +820,8 @@ header {
               border-bottom: 1px solid $light_grey;
               width: 100%;
               // padding: 15px 10px;
-              padding-top: clamp(10px, 2vw, 20px);
+              padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
+              padding-bottom: clamp(10px, 2vw, 20px);
                a {
                 text-transform: uppercase;
                 color: $azure;
