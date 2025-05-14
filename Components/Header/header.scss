@@ -47,6 +47,7 @@ header {
   width: 100vw;
   padding: 1px 42px;
   background-color: $white;
+  z-index: 99;
 
   // HEADER CONTAINER ============================================
 
@@ -208,28 +209,19 @@ header {
     position: relative;
     width: 100%;
     max-width: 1220px;
-    // .shadow_background {
-    //   position: absolute;
-    //   bottom: 0px;
-    //   width: 100vw;
-    //   height: 50vh;
-    //   background-color: rgba(102, 51, 153, 0.167);
-    // }
+    z-index: 99;
+
     ul {
-      @include displayCenter(center, center);
+      @include displayCenter(center, flex-start);
       width: 100%;
       list-style: none;
       #close_button {
-        // @include displayCenter(center, center);
         display: none;
         width: max-content;
         height: max-content;
         cursor: pointer;
-        // i {
-        //   font-size: 14px;
-        //   color: $azure;
-        // }
       }
+
       li {
         @include displayCenter(center, center);
         flex-direction: column;
@@ -319,8 +311,7 @@ header {
           bottom: 0px;
           width: 60%;
           height: 100%;
-          background-color: $orange;
-          // background-color: $light_grey;
+          background-color: $light_grey;
           border-bottom-right-radius: 16px;
           .we_recomended {
             margin: 30px 0px 25px 25px;
@@ -423,8 +414,7 @@ header {
           bottom: 0px;
           width: 60%;
           height: 100%;
-          background-color: $orange;
-          // background-color: $light_grey;
+          background-color: $light_grey;
           border-bottom-right-radius: 16px;
           .we_recomended {
             margin: 30px 0px 25px 25px;
@@ -528,8 +518,7 @@ header {
           bottom: 0px;
           width: 60%;
           height: 100%;
-          background-color: $orange;
-          // background-color: $light_grey;
+          background-color: $light_grey;
           border-bottom-right-radius: 16px;
           .we_recomended {
             margin: 30px 0px 25px 25px;
@@ -634,8 +623,7 @@ header {
           bottom: 0px;
           width: 60%;
           height: 100%;
-          background-color: $orange;
-          // background-color: $light_grey;
+          background-color: $light_grey;
           border-bottom-right-radius: 16px;
           .we_recomended {
             margin: 30px 0px 25px 25px;
@@ -738,8 +726,7 @@ header {
           bottom: 0px;
           width: 60%;
           height: 100%;
-          background-color: $orange;
-          // background-color: $light_grey;
+          background-color: $light_grey;
           border-bottom-right-radius: 16px;
           .we_recomended {
             margin: 30px 0px 25px 25px;
@@ -842,8 +829,7 @@ header {
           bottom: 0px;
           width: 60%;
           height: 100%;
-          background-color: $orange;
-          // background-color: $light_grey;
+          background-color: $light_grey;
           border-bottom-right-radius: 16px;
           .we_recomended {
             margin: 30px 0px 25px 25px;
@@ -1006,7 +992,7 @@ header {
 
 @media screen and (max-width: 960px) {
   header {
-    position: fixed;
+    position: sticky;
     top: 0px;
     .header_container {
       .search_container {
@@ -1084,8 +1070,6 @@ header {
 
 @media screen and (max-width: 768px) {
   header {
-    position: fixed;
-    top: 0px;
     .header_container {
       .search_container {
         display: none;
@@ -1097,8 +1081,8 @@ header {
           transform: translate(-50%);
           width: 80%;
           height: 40px;
-          input{
-          background-color: $white;
+          input {
+            background-color: $white;
           }
           #close_search_button {
             @include displayCenter(center, center);

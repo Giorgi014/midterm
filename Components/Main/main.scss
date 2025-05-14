@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Poppins Light";
+  src: url(../../assets/font/Poppins-Light.ttf) format("woff2");
+}
+@font-face {
+  font-family: "Poppins Medium";
+  src: url(../../assets/font/Poppins-Medium.ttf) format("woff2");
+}
+
 @mixin displayCenter($justify, $align) {
   display: flex;
   justify-content: $justify;
@@ -9,11 +18,143 @@ $azure: #0b3954;
 $grey: #333333;
 $light_grey: #f5f5f5;
 $orange: #ffb128;
+$transparent_grey:#ffffff26;
+$transparent_grey_border: #ffffff33;
 
 main {
   @include displayCenter(center, center);
   flex-direction: column;
   width: 100vw;
-  height: 1000px;
   background-color: $light_grey;
+  overflow: hidden;
+  font-family: "Poppins Light";
+  .wrapper_container {
+    @include displayCenter(center, center);
+    position: relative;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1728px;
+    height: 670px;
+    border-radius: 32px;
+    background-color: $azure;
+    .wrapper_image_conatiner {
+      position: absolute;
+      top: 38px;
+      width: 1178px;
+      height: 669.47px;
+      border-radius: 32px;
+      .wrapper_image {
+        width: 100%;
+        height: 100%;
+        border-radius: 32px;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 32px;
+        }
+      }
+      .wrapper_info {
+        position: absolute;
+        top: 0px;
+        p {
+          margin: 52px 0px 5px 50px;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 25px;
+          letter-spacing: 0%;
+          color: $white;
+        }
+        h1 {
+          margin: 0px 50px;
+          width: 380px;
+          font-family: "Poppins Medium";
+          font-weight: 700;
+          font-size: 64px;
+          line-height: 72px;
+          letter-spacing: 0%;
+          color: $white;
+        }
+        .wrapper_buttons {
+          @include displayCenter(center, center);
+          width: max-content;
+          gap: 27.91px;
+          margin: 30px 0px 5px 50px;
+          .go_shop {
+            width: 152px;
+            padding: 11px 30px 11px 30px;
+            border-radius: 45px;
+            background-color: $orange;
+            border: none;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0%;
+            color: $white;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+            &:hover {
+              background-color: $white;
+              color: $orange;
+            }
+          }
+          .collections {
+            width: 184.64px;
+            padding: 11px 30px 11px 30px;
+            border-radius: 45px;
+            background-color: $white;
+            border: none;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0%;
+            color: $orange;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+            &:hover {
+              background-color: $orange;
+              color: $white;
+            }
+          }
+        }
+      }
+      .rs_wrapper_layers {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: max-content;
+        .rs_wrap_layer {
+          @include displayCenter(center, center);
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          border: 0.33px solid $transparent_grey_border;
+          background-color: $transparent_grey;
+          cursor: pointer;
+          transition: transform 0.3s ease-in-out;
+          .rs_wrap_layer_border {
+            @include displayCenter(center, center);
+            width: 46.67px;
+            height: 46.67px;
+            border-radius: 50%;
+            border: 0.33px solid $transparent_grey_border;
+            cursor: pointer;
+            .rs_wrap_layer_btn {
+              @include displayCenter(center, center);
+              width: 24px;
+              height: 24px;
+              border-radius: 50%;
+              background-color: $orange;
+              border: none;
+              color: $white;
+              font-size: 14px;
+              cursor: pointer;
+            }
+          }
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
 }

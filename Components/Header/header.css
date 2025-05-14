@@ -30,6 +30,7 @@ header {
   width: 100vw;
   padding: 1px 42px;
   background-color: #ffffff;
+  z-index: 99;
 }
 header .header_container {
   display: flex;
@@ -204,11 +205,12 @@ header nav {
   position: relative;
   width: 100%;
   max-width: 1220px;
+  z-index: 99;
 }
 header nav ul {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   list-style: none;
 }
@@ -313,7 +315,7 @@ header nav ul .chairs .recomend_product_container {
   bottom: 0px;
   width: 60%;
   height: 100%;
-  background-color: #ffb128;
+  background-color: #f5f5f5;
   border-bottom-right-radius: 16px;
 }
 header nav ul .chairs .recomend_product_container .we_recomended {
@@ -418,7 +420,7 @@ header nav ul .beds .recomend_product_container {
   bottom: 0px;
   width: 60%;
   height: 100%;
-  background-color: #ffb128;
+  background-color: #f5f5f5;
   border-bottom-right-radius: 16px;
 }
 header nav ul .beds .recomend_product_container .we_recomended {
@@ -523,7 +525,7 @@ header nav ul .tables .recomend_product_container {
   bottom: 0px;
   width: 60%;
   height: 100%;
-  background-color: #ffb128;
+  background-color: #f5f5f5;
   border-bottom-right-radius: 16px;
 }
 header nav ul .tables .recomend_product_container .we_recomended {
@@ -630,7 +632,7 @@ header nav ul .desks .recomend_product_container {
   bottom: 0px;
   width: 60%;
   height: 100%;
-  background-color: #ffb128;
+  background-color: #f5f5f5;
   border-bottom-right-radius: 16px;
 }
 header nav ul .desks .recomend_product_container .we_recomended {
@@ -735,7 +737,7 @@ header nav ul .cabinets .recomend_product_container {
   bottom: 0px;
   width: 60%;
   height: 100%;
-  background-color: #ffb128;
+  background-color: #f5f5f5;
   border-bottom-right-radius: 16px;
 }
 header nav ul .cabinets .recomend_product_container .we_recomended {
@@ -840,7 +842,7 @@ header nav ul .lighting .recomend_product_container {
   bottom: 0px;
   width: 60%;
   height: 100%;
-  background-color: #ffb128;
+  background-color: #f5f5f5;
   border-bottom-right-radius: 16px;
 }
 header nav ul .lighting .recomend_product_container .we_recomended {
@@ -938,7 +940,7 @@ header nav ul .sales:hover {
 }
 @media screen and (max-width: 960px) {
   header {
-    position: fixed;
+    position: sticky;
     top: 0px;
   }
   header .header_container .search_container {
@@ -1013,10 +1015,6 @@ header nav ul .sales:hover {
   }
 }
 @media screen and (max-width: 768px) {
-  header {
-    position: fixed;
-    top: 0px;
-  }
   header .header_container .search_container {
     display: none;
   }
