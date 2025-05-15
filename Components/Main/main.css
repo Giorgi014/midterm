@@ -49,74 +49,6 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_image {
   background-size: cover;
   background-repeat: no-repeat;
 }
-main .wrapper_container .wrapper_image_conatiner .wrapper_info {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-main .wrapper_container .wrapper_image_conatiner .wrapper_info p {
-  margin: 52px 0px 5px 50px;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 25px;
-  letter-spacing: 0%;
-  color: #ffffff;
-}
-main .wrapper_container .wrapper_image_conatiner .wrapper_info h1 {
-  margin: 0px 50px;
-  width: clamp(233px, 30vw, 380px);
-  font-family: "Poppins Medium";
-  font-weight: 700;
-  font-size: clamp(35px, 10vw, 64px);
-  line-height: clamp(38px, 10vw, 72px);
-  letter-spacing: 0%;
-  color: #ffffff;
-}
-main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: -moz-max-content;
-  width: max-content;
-  gap: clamp(6px, 4vw, 27.91px);
-  margin: 30px 0px 5px 50px;
-}
-main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop {
-  width: clamp(129px, 31vw, 152px);
-  padding: 11px 30px;
-  border-radius: 45px;
-  background-color: #ffb128;
-  border: none;
-  font-weight: 600;
-  font-size: clamp(10px, 3vw, 14px);
-  line-height: clamp(10px, 3vw, 21px);
-  letter-spacing: 0%;
-  color: #ffffff;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop:hover {
-  background-color: #ffffff;
-  color: #ffb128;
-}
-main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .collections {
-  width: clamp(129.03px, 31vw, 184.64px);
-  padding: 11px 30px 11px 30px;
-  border-radius: 45px;
-  background-color: #ffffff;
-  border: none;
-  font-weight: 600;
-  font-size: clamp(10px, 2vw, 14px);
-  line-height: clamp(10px, 4vw, 21px);
-  letter-spacing: 0%;
-  color: #ffb128;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .collections:hover {
-  background-color: #ffb128;
-  color: #ffffff;
-}
 main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers {
   position: absolute;
   width: 100%;
@@ -193,6 +125,74 @@ main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs
   font-size: 14px;
   cursor: pointer;
 }
+main .wrapper_container .wrapper_image_conatiner .wrapper_info {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+main .wrapper_container .wrapper_image_conatiner .wrapper_info p {
+  margin: 52px 0px 5px 50px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .wrapper_container .wrapper_image_conatiner .wrapper_info h1 {
+  margin: 0px 50px;
+  width: clamp(233px, 30vw, 380px);
+  font-family: "Poppins Medium";
+  font-weight: 700;
+  font-size: clamp(35px, 10vw, 64px);
+  line-height: clamp(38px, 10vw, 72px);
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: -moz-max-content;
+  width: max-content;
+  gap: clamp(6px, 4vw, 27.91px);
+  margin: 30px 0px 5px 50px;
+}
+main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop {
+  width: clamp(129px, 31vw, 152px);
+  padding: 11px 30px;
+  border-radius: 45px;
+  background-color: #ffb128;
+  border: none;
+  font-weight: 600;
+  font-size: clamp(10px, 3vw, 14px);
+  line-height: clamp(10px, 3vw, 21px);
+  letter-spacing: 0%;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop:hover {
+  background-color: #ffffff;
+  color: #ffb128;
+}
+main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .collections {
+  width: clamp(129.03px, 31vw, 184.64px);
+  padding: 11px 30px 11px 30px;
+  border-radius: 45px;
+  background-color: #ffffff;
+  border: none;
+  font-weight: 600;
+  font-size: clamp(10px, 2vw, 14px);
+  line-height: clamp(10px, 4vw, 21px);
+  letter-spacing: 0%;
+  color: #ffb128;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .collections:hover {
+  background-color: #ffb128;
+  color: #ffffff;
+}
 
 @media screen and (max-width: 768px) {
   main .wrapper_container .wrapper_background {
@@ -205,21 +205,6 @@ main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs
   }
 }
 @media screen and (max-width: 740px) {
-  main .wrapper_container .wrapper_image_conatiner .wrapper_info p {
-    margin: 20px 0px 5px 21px;
-  }
-  main .wrapper_container .wrapper_image_conatiner .wrapper_info h1 {
-    margin: 0px 21px;
-  }
-  main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons {
-    margin: 0 21px;
-  }
-  main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop {
-    padding: 10px 20px;
-  }
-  main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .collections {
-    padding: 10px 20px;
-  }
   main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap {
     display: flex;
     justify-content: center;
@@ -264,6 +249,21 @@ main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs
     width: 12px;
     height: 12px;
     font-size: 10px;
+  }
+  main .wrapper_container .wrapper_image_conatiner .wrapper_info p {
+    margin: 20px 0px 5px 21px;
+  }
+  main .wrapper_container .wrapper_image_conatiner .wrapper_info h1 {
+    margin: 0px 21px;
+  }
+  main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons {
+    margin: 0 21px;
+  }
+  main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop {
+    padding: 10px 20px;
+  }
+  main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .collections {
+    padding: 10px 20px;
   }
 }
 @media screen and (max-width: 450px) {
