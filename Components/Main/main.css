@@ -14,6 +14,7 @@ main {
   width: 100vw;
   background-color: #f5f5f5;
   font-family: "Poppins Light";
+  overflow-x: hidden;
 }
 main .wrapper_container {
   display: flex;
@@ -143,8 +144,8 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info h1 {
   width: clamp(233px, 30vw, 380px);
   font-family: "Poppins Medium";
   font-weight: 700;
-  font-size: clamp(35px, 10vw, 64px);
-  line-height: clamp(38px, 10vw, 72px);
+  font-size: clamp(35px, 8vw, 64px);
+  line-height: clamp(38px, 8vw, 72px);
   letter-spacing: 0%;
   color: #ffffff;
 }
@@ -158,13 +159,13 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons 
   margin: 30px 0px 5px 50px;
 }
 main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop {
-  width: clamp(129px, 31vw, 152px);
+  width: clamp(129px, 20vw, 152px);
   padding: 11px 30px;
   border-radius: 45px;
   background-color: #ffb128;
   border: none;
   font-weight: 600;
-  font-size: clamp(10px, 3vw, 14px);
+  font-size: clamp(10px, 1vw, 14px);
   line-height: clamp(10px, 3vw, 21px);
   letter-spacing: 0%;
   color: #ffffff;
@@ -176,14 +177,14 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons 
   color: #ffb128;
 }
 main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .collections {
-  width: clamp(129.03px, 31vw, 184.64px);
+  width: clamp(129.03px, 20vw, 184.64px);
   padding: 11px 30px 11px 30px;
   border-radius: 45px;
   background-color: #ffffff;
   border: none;
   font-weight: 600;
-  font-size: clamp(10px, 2vw, 14px);
-  line-height: clamp(10px, 4vw, 21px);
+  font-size: clamp(10px, 1vw, 14px);
+  line-height: clamp(10px, 3vw, 21px);
   letter-spacing: 0%;
   color: #ffb128;
   cursor: pointer;
@@ -202,6 +203,9 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons 
     margin: 0px auto;
     width: clamp(351px, 90vw, 691px);
     height: clamp(365.39px, 90vw, 719.34px);
+  }
+  main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons {
+    margin: 0 21px;
   }
 }
 @media screen and (max-width: 740px) {
@@ -237,17 +241,17 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons 
     left: 74%;
   }
   main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs_wrap_layer {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     cursor: pointer;
   }
   main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs_wrap_layer .rs_wrap_layer_border {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
   }
   main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs_wrap_layer .rs_wrap_layer_border .rs_wrap_layer_btn {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     font-size: 10px;
   }
   main .wrapper_container .wrapper_image_conatiner .wrapper_info p {
@@ -255,9 +259,6 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons 
   }
   main .wrapper_container .wrapper_image_conatiner .wrapper_info h1 {
     margin: 0px 21px;
-  }
-  main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons {
-    margin: 0 21px;
   }
   main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop {
     padding: 10px 20px;
