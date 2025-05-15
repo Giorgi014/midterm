@@ -43,13 +43,10 @@ main {
     .wrapper_image_conatiner {
       position: relative;
       margin: 38px auto;
-      // margin: clamp(35px, 4vh, 38px) auto;
-      // width: clamp(351px, 95vw, 1178px);
       width: 95vw;
       max-width: 1178px;
       height: 95vh;
       max-height: 669.47px;
-      // height: clamp(552.98px, 95%, 669.47px);
       border-radius: 32px;
       .wrapper_image {
         width: 100%;
@@ -77,25 +74,26 @@ main {
           width: 380px;
           font-family: "Poppins Medium";
           font-weight: 700;
-          font-size: 64px;
-          line-height: 72px;
+          font-size: clamp(35px, 10vw, 64px);
+          line-height: clamp(38px, 10vw, 72px);
           letter-spacing: 0%;
           color: $white;
         }
         .wrapper_buttons {
           @include displayCenter(center, center);
           width: max-content;
-          gap: 27.91px;
+          gap: clamp(6px, 4vw, 27.91px);
           margin: 30px 0px 5px 50px;
           .go_shop {
-            width: 152px;
-            padding: 11px 30px 11px 30px;
+            width: clamp(129px, 31vw, 152px);
+            padding: 11px 30px;
             border-radius: 45px;
             background-color: $orange;
             border: none;
             font-weight: 600;
-            font-size: 14px;
-            line-height: 21px;
+            // font-size: 14px;
+            font-size: clamp(10px, 3vw, 14px);
+            line-height: clamp(10px, 3vw, 21px);
             letter-spacing: 0%;
             color: $white;
             cursor: pointer;
@@ -106,14 +104,17 @@ main {
             }
           }
           .collections {
-            width: 184.64px;
+            // width: 184.64px;
+            width: clamp(129.03px, 31vw, 184.64px);
             padding: 11px 30px 11px 30px;
             border-radius: 45px;
             background-color: $white;
             border: none;
             font-weight: 600;
-            font-size: 14px;
-            line-height: 21px;
+            // font-size: 14px;
+            // line-height: 21px;
+            font-size: clamp(10px, 3vw, 14px);
+            line-height: clamp(10px, 3vw, 21px);
             letter-spacing: 0%;
             color: $orange;
             cursor: pointer;
@@ -209,9 +210,109 @@ main {
       }
       .wrapper_image_conatiner {
         margin: 0px auto;
-        width: 90vw;
-        max-width: 691px;
-        height: 719.34px;
+        width: clamp(351px, 90vw, 691px);
+        height: clamp(365.39px, 90vw, 719.34px);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  main {
+    .wrapper_container {
+      .wrapper_image_conatiner {
+        .wrapper_info {
+          p {
+            margin: 20px 0px 5px 21px;
+          }
+          h1 {
+            margin: 0px 21px;
+          }
+          .wrapper_buttons {
+            margin-left: 21px;
+            .go_shop {
+              padding: 10px 20px;
+            }
+            .collections {
+              padding: 10px 20px;
+            }
+          }
+        }
+        .rs_wrapper_layers {
+          .rs_wrap {
+            @include displayCenter(center, center);
+            width: 35px;
+            height: 35px;
+            transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+              scale 0.3s ease-in-out;
+            &:hover {
+              scale: 1.2;
+              .rs_wrap_layer {
+                width: 35px;
+                height: 35px;
+                .rs_wrap_layer_border {
+                  width: 23.33px;
+                  height: 23.33px;
+                }
+              }
+            }
+            &:nth-child(1) {
+              top: 74%;
+              right: 93%;
+            }
+
+            &:nth-child(2) {
+              top: 44%;
+              left: 48%;
+            }
+
+            &:nth-child(3) {
+              top: 71%;
+              left: 74%;
+            }
+            .rs_wrap_layer {
+              width: 12px;
+              height: 12px;
+              cursor: pointer;
+              .rs_wrap_layer_border {
+                width: 12px;
+                height: 12px;
+                .rs_wrap_layer_btn {
+                  width: 12px;
+                  height: 12px;
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  main {
+    .wrapper_container {
+      .wrapper_image_conatiner {
+        .rs_wrapper_layers {
+          .rs_wrap {
+            &:nth-child(1) {
+              top: 74%;
+              right: 91%;
+            }
+
+            &:nth-child(2) {
+              top: 43%;
+              left: 46%;
+            }
+
+            &:nth-child(3) {
+              top: 69%;
+              left: 73%;
+            }
+          }
+        }
       }
     }
   }
