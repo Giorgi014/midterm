@@ -64,7 +64,7 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info p {
 }
 main .wrapper_container .wrapper_image_conatiner .wrapper_info h1 {
   margin: 0px 50px;
-  width: 380px;
+  width: clamp(233px, 30vw, 380px);
   font-family: "Poppins Medium";
   font-weight: 700;
   font-size: clamp(35px, 10vw, 64px);
@@ -106,8 +106,8 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons 
   background-color: #ffffff;
   border: none;
   font-weight: 600;
-  font-size: clamp(10px, 3vw, 14px);
-  line-height: clamp(10px, 3vw, 21px);
+  font-size: clamp(10px, 2vw, 14px);
+  line-height: clamp(10px, 4vw, 21px);
   letter-spacing: 0%;
   color: #ffb128;
   cursor: pointer;
@@ -212,7 +212,7 @@ main .wrapper_container .wrapper_image_conatiner .rs_wrapper_layers .rs_wrap .rs
     margin: 0px 21px;
   }
   main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons {
-    margin-left: 21px;
+    margin: 0 21px;
   }
   main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop {
     padding: 10px 20px;
