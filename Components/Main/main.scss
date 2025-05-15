@@ -21,62 +21,49 @@ $orange: #ffb128;
 $transparent_grey: #ffffff26;
 $transparent_grey_border: #ffffff33;
 
-@keyframes progresiveWidth {
-  0% {
-    width: 24px;
-    height: 24px;
-  }
-  100% {
-    width: 70px;
-    height: 70px;
-  }
-}
-@keyframes progresiveSecondWidth {
-  0% {
-    width: 24px;
-    height: 24px;
-  }
-  100% {
-    width: 46.67px;
-    height: 46.67px;
-  }
-}
-
 main {
   @include displayCenter(center, center);
   flex-direction: column;
   width: 100vw;
   background-color: $light_grey;
-  overflow: hidden;
   font-family: "Poppins Light";
   .wrapper_container {
     @include displayCenter(center, center);
     position: relative;
-    margin: 30px auto;
-    width: 90%;
-    max-width: 1728px;
-    height: 670px;
-    border-radius: 32px;
-    background-color: $azure;
-    .wrapper_image_conatiner {
+    width: 100%;
+    margin: clamp(19px, 1vh, 30px) auto;
+    .wrapper_background {
       position: absolute;
-      top: 38px;
-      width: 1178px;
-      height: 669.47px;
+      top: 0px;
+      width: clamp(700px, 90vw, 1728px);
+      height: clamp(450px, 89%, 670px);
+      border-radius: 32px;
+      background-color: $azure;
+    }
+    .wrapper_image_conatiner {
+      position: relative;
+      margin: 38px auto;
+      // margin: clamp(35px, 4vh, 38px) auto;
+      // width: clamp(351px, 95vw, 1178px);
+      width: 95vw;
+      max-width: 1178px;
+      height: 95vh;
+      max-height: 669.47px;
+      // height: clamp(552.98px, 95%, 669.47px);
       border-radius: 32px;
       .wrapper_image {
         width: 100%;
         height: 100%;
         border-radius: 32px;
-        img {
-          width: 100%;
-          height: 100%;
-          border-radius: 32px;
-        }
+        background-image: url("../../assets/wrapper.svg");
+        background-position: right;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       .wrapper_info {
         position: absolute;
         top: 0px;
+        left: 0px;
         p {
           margin: 52px 0px 5px 50px;
           font-weight: 600;
@@ -140,23 +127,44 @@ main {
       }
       .rs_wrapper_layers {
         position: absolute;
-        top: 100px;
-        right: 150px;
-        width: max-content;
+        width: 100%;
+        height: 100%;
+        top: 0px;
         .rs_wrap {
           @include displayCenter(center, center);
           width: 70px;
           height: 70px;
-          transition: width .3s ease-in-out, height .3s ease-in-out, scale .3s ease-in-out;
+          transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
+            scale 0.3s ease-in-out;
           &:hover {
-            scale: 1.1;
+            scale: 1.2;
             .rs_wrap_layer {
-              animation: progresiveWidth 0.5s linear forwards;
-            }
-            .rs_wrap_layer_border {
-              animation: progresiveSecondWidth 0.2s linear forwards;
+              width: 70px;
+              height: 70px;
+              .rs_wrap_layer_border {
+                width: 46px;
+                height: 46px;
+              }
             }
           }
+          &:nth-child(1) {
+            position: absolute;
+            bottom: 124.28px;
+            right: 604.17px;
+          }
+
+          &:nth-child(2) {
+            position: absolute;
+            top: 278px;
+            right: 297px;
+          }
+
+          &:nth-child(3) {
+            position: absolute;
+            bottom: 163.48px;
+            right: 124px;
+          }
+
           .rs_wrap_layer {
             @include displayCenter(center, center);
             width: 24px;
@@ -164,16 +172,15 @@ main {
             border-radius: 50%;
             border: 0.33px solid $transparent_grey_border;
             background-color: $transparent_grey;
+            transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
             cursor: pointer;
-            // &:hover {
-            //   animation: progresiveWidth 0.5s linear forwards;
-            // }
             .rs_wrap_layer_border {
               @include displayCenter(center, center);
               width: 24px;
               height: 24px;
               border-radius: 50%;
               border: 0.33px solid $transparent_grey_border;
+              transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
               cursor: pointer;
               .rs_wrap_layer_btn {
                 @include displayCenter(center, center);
@@ -189,6 +196,22 @@ main {
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    .wrapper_container {
+      .wrapper_background {
+        display: none;
+      }
+      .wrapper_image_conatiner {
+        margin: 0px auto;
+        width: 90vw;
+        max-width: 691px;
+        height: 719.34px;
       }
     }
   }
