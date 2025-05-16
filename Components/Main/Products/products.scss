@@ -46,7 +46,7 @@ main {
           letter-spacing: 0%;
           color: $azure;
         }
-        .total_item_number {
+        #total_item_number {
           font-family: "Sora Medium";
           margin-left: 12px;
           margin-bottom: 5px;
@@ -172,10 +172,13 @@ main {
 @media screen and (max-width: 600px) {
   main {
     .search_products_container {
-      .search_products{
+      .search_products {
         @include displayCenter(center, flex-start);
         flex-direction: column;
         row-gap: 40px;
+        .products_and_experience {
+          margin-left: 12px;
+        }
       }
     }
   }

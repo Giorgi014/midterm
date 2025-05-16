@@ -30,7 +30,7 @@ main .search_products_container .search_products .search_total_products .search_
   letter-spacing: 0%;
   color: #0b3954;
 }
-main .search_products_container .search_products .search_total_products .total_item_number {
+main .search_products_container .search_products .search_total_products #total_item_number {
   font-family: "Sora Medium";
   margin-left: 12px;
   margin-bottom: 5px;
@@ -152,6 +152,9 @@ main .search_products_container .product_items .item_container:hover {
     align-items: flex-start;
     flex-direction: column;
     row-gap: 40px;
+  }
+  main .search_products_container .search_products .products_and_experience {
+    margin-left: 12px;
   }
 }
 @media screen and (max-width: 470px) {
