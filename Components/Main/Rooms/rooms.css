@@ -1,1 +1,71 @@
-/*# sourceMappingURL=rooms.css.map */
+@font-face {
+  font-family: "Sora Medium";
+  src: url(../../../assets/font/sora/static/Sora-Medium.ttf) format("woff2");
+}
+@font-face {
+  font-family: "Sora Light";
+  src: url(../../../assets/font/sora/static/Sora-Light.ttf) format("woff2");
+}
+@font-face {
+  font-family: "Poppins Light";
+  src: url(../../../assets/font/Poppins-Light.ttf) format("woff2");
+}
+main .rooms_container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  margin: 0 auto;
+  width: 100%;
+}
+main .rooms_container .rooms {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: relative;
+  width: clamp(341.33px, 31vw, 595px);
+  height: 600px;
+  border-radius: 32px;
+}
+main .rooms_container .rooms .room_info {
+  margin: 70px 42px;
+}
+main .rooms_container .rooms .room_info .time_to {
+  font-family: "Poppins Light";
+  font-weight: 400;
+  font-size: clamp(13px, 3vw, 16px);
+  line-height: clamp(19px, 3vw, 24px);
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .rooms_container .rooms .room_info .room {
+  font-family: "Sora Medium";
+  margin: 20px 0;
+  font-weight: 700;
+  font-size: clamp(29px, 3vw, 48px);
+  line-height: clamp(33px, 3vw, 55px);
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+main .rooms_container .rooms .room_info .line {
+  width: 22px;
+  height: 7px;
+  border-radius: 4px;
+  background-color: #ffb128;
+}
+main .rooms_container .bedroom {
+  background-image: url("../../../assets/bedroom.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .rooms_container .offices {
+  background-image: url("../../../assets/office.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main .rooms_container .kitchens {
+  background-image: url("../../../assets/kitchen.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}/*# sourceMappingURL=rooms.css.map */

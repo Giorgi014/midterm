@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "Sora Medium";
+  src: url(../../../assets/font/sora/static/Sora-Medium.ttf) format("woff2");
+}
+@font-face {
+  font-family: "Sora Light";
+  src: url(../../../assets/font/sora/static/Sora-Light.ttf) format("woff2");
+}
+@font-face {
+  font-family: "Poppins Light";
+  src: url(../../../assets/font/Poppins-Light.ttf) format("woff2");
+}
+
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin displayGrid($grid, $gap) {
+  display: grid;
+  grid-template-columns: repeat($grid, $gap);
+}
+
+$white: #ffffff;
+$azure: #0b3954;
+$grey: #333333;
+$light_grey: #f5f5f5;
+$grey_light: #5c676d;
+$orange: #ffb128;
+$transparent_grey: #ffffff26;
+$transparent_grey_border: #ffffff33;
+
+main {
+  .rooms_container {
+    @include displayGrid(3, auto);
+    margin: 0 auto;
+    width: 100%;
+    .rooms {
+      @include displayCenter(flex-start, flex-end);
+      position: relative;
+      width: clamp(341.33px, 31vw, 595px);
+      height: 600px;
+      border-radius: 32px;
+      .room_info {
+        margin: 70px 42px;
+        .time_to {
+          font-family: "Poppins Light";
+          font-weight: 400;
+          font-size: clamp(13px, 3vw, 16px);
+          line-height: clamp(19px, 3vw, 24px);
+          letter-spacing: 0%;
+          color: $white;
+        }
+        .room {
+          font-family: "Sora Medium";
+          margin: 20px 0;
+          font-weight: 700;
+          font-size: clamp(29px, 3vw, 48px);
+          line-height: clamp(33px, 3vw, 55px);
+          letter-spacing: 0%;
+          color: $white;
+        }
+        .line {
+          width: 22px;
+          height: 7px;
+          border-radius: 4px;
+          background-color: $orange;
+        }
+      }
+    }
+    .bedroom {
+      background-image: url("../../../assets/bedroom.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .offices {
+      background-image: url("../../../assets/office.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .kitchens {
+      background-image: url("../../../assets/kitchen.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 1070px){
+    main{
+        .rooms_container{
+            .rooms{
+                
+            }
+        }
+    }
+}
