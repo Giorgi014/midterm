@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "Poppins Medium";
-  src: url(../../../assets/font/Poppins-Medium.ttf) format("woff2");
+  font-family: "Sora Medium";
+  src: url(../../../assets/font/sora/static/Sora-Medium.ttf) format("woff2");
 }
 @font-face {
-  font-family: "Poppins Light";
-  src: url(../../../assets/font/Poppins-Light.ttf) format("woff2");
+  font-family: "Sora Light";
+  src: url(../../../assets/font/sora/static/Sora-Light.ttf) format("woff2");
 }
 
 @mixin displayCenter($justify, $align) {
@@ -12,11 +12,16 @@
   justify-content: $justify;
   align-items: $align;
 }
+@mixin displayGrid($grid, $gap) {
+  display: grid;
+  grid-template-columns: repeat($grid, $gap);
+}
 
 $white: #ffffff;
 $azure: #0b3954;
 $grey: #333333;
 $light_grey: #f5f5f5;
+$grey_light: #5c676d;
 $orange: #ffb128;
 $transparent_grey: #ffffff26;
 $transparent_grey_border: #ffffff33;
@@ -25,14 +30,14 @@ main {
   .search_products_container {
     @include displayCenter(center, center);
     flex-direction: column;
-    width: 1280px;
+    width: clamp(324px, 90vw, 1280px);
     margin: 100px 0px 60px 0px;
     .search_products {
       @include displayCenter(space-between, center);
       width: 100%;
       .search_total_products {
         .search_for {
-          font-family: "Poppins Light";
+          font-family: "Sora Light";
           margin-left: 12px;
           margin-bottom: 20px;
           font-weight: 600;
@@ -42,7 +47,7 @@ main {
           color: $azure;
         }
         .total_item_number {
-          font-family: "Poppins Medium";
+          font-family: "Sora Medium";
           margin-left: 12px;
           margin-bottom: 5px;
           font-weight: 600;
@@ -52,27 +57,139 @@ main {
           color: $orange;
         }
         .search_product_text {
-          font-family: "Poppins Medium";
+          font-family: "Sora Medium";
           margin-left: 12px;
           font-weight: 700;
-          font-size: 48px;
-          line-height: 55px;
+          font-size: clamp(41px, 5vw, 48px);
+          line-height: clamp(47px, 5vw, 55px);
           letter-spacing: 0%;
           color: $azure;
         }
       }
       .products_and_experience {
         @include displayCenter(center, center);
-        .line {
-          width: 22px;
-          height: 7px;
-          border-radius: 4px;
-          background-color: $orange;
+        gap: 40px;
+        .items_and_experience {
+          @include displayCenter(center, center);
+          gap: 24.5px;
+          .line {
+            width: 22px;
+            height: 7px;
+            border-radius: 4px;
+            background-color: $orange;
+          }
+          .item_number_cont {
+            .item_number {
+              font-family: "Sora Medium";
+              font-weight: 700;
+              font-size: clamp(20px, 2vw, 24px);
+              line-height: clamp(27px, 3vw, 32px);
+              letter-spacing: 0%;
+              color: $azure;
+            }
+            .products_text {
+              font-family: "Sora Light";
+              font-size: clamp(14px, 1vw, 16px);
+              line-height: clamp(20px, 2vw, 24px);
+              letter-spacing: 0%;
+              color: $grey_light;
+            }
+          }
+          .experiens {
+            .experiens_year {
+              font-family: "Sora Medium";
+              font-weight: 700;
+              font-size: clamp(20px, 2vw, 24px);
+              line-height: clamp(27px, 3vw, 32px);
+              letter-spacing: 0%;
+              color: $azure;
+            }
+            .experiens_text {
+              font-family: "Sora Light";
+              font-size: clamp(14px, 1vw, 16px);
+              line-height: clamp(20px, 2vw, 24px);
+              letter-spacing: 0%;
+              color: $grey_light;
+            }
+          }
         }
       }
     }
     .product_items {
-      @include displayCenter(center, center);
+      @include displayGrid(6, auto);
+      margin: 60px auto;
+      width: 100%;
+      .item_container {
+        @include displayCenter(space-around, center);
+        flex-direction: column;
+        width: clamp(132.67px, 14vw, 179.33px);
+        height: 198px;
+        border-radius: 32px;
+        background-color: $light_grey;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out,
+          box-shadow 0.3s ease-in-out;
+        img {
+          width: 80px;
+          height: 80px;
+        }
+        p {
+          font-family: "Sora Medium";
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: 0%;
+          text-align: center;
+          color: $azure;
+        }
+        &:hover {
+          background-color: $white;
+          box-shadow: 0px 0px 20px 10px $light_grey;
+        }
+      }
+    }
+  }
+}
+
+// RESPONSIVE ========================================
+
+@media screen and (max-width: 960px) {
+  main {
+    .search_products_container {
+      .product_items {
+        @include displayGrid(3, auto);
+        justify-content: space-between;
+        row-gap: 40px;
+        .item_container {
+          width: clamp(132.67px, 26vw, 211.98px);
+          height: 192px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    .search_products_container {
+      .search_products{
+        @include displayCenter(center, flex-start);
+        flex-direction: column;
+        row-gap: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  main {
+    .search_products_container {
+      .product_items {
+        @include displayGrid(2, auto);
+        .item_container {
+          width: clamp(132.67px, 42vw, 302px);
+        }
+      }
     }
   }
 }

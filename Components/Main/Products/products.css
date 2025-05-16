@@ -1,17 +1,17 @@
 @font-face {
-  font-family: "Poppins Medium";
-  src: url(../../../assets/font/Poppins-Medium.ttf) format("woff2");
+  font-family: "Sora Medium";
+  src: url(../../../assets/font/sora/static/Sora-Medium.ttf) format("woff2");
 }
 @font-face {
-  font-family: "Poppins Light";
-  src: url(../../../assets/font/Poppins-Light.ttf) format("woff2");
+  font-family: "Sora Light";
+  src: url(../../../assets/font/sora/static/Sora-Light.ttf) format("woff2");
 }
 main .search_products_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 1280px;
+  width: clamp(324px, 90vw, 1280px);
   margin: 100px 0px 60px 0px;
 }
 main .search_products_container .search_products {
@@ -21,7 +21,7 @@ main .search_products_container .search_products {
   width: 100%;
 }
 main .search_products_container .search_products .search_total_products .search_for {
-  font-family: "Poppins Light";
+  font-family: "Sora Light";
   margin-left: 12px;
   margin-bottom: 20px;
   font-weight: 600;
@@ -31,7 +31,7 @@ main .search_products_container .search_products .search_total_products .search_
   color: #0b3954;
 }
 main .search_products_container .search_products .search_total_products .total_item_number {
-  font-family: "Poppins Medium";
+  font-family: "Sora Medium";
   margin-left: 12px;
   margin-bottom: 5px;
   font-weight: 600;
@@ -41,11 +41,11 @@ main .search_products_container .search_products .search_total_products .total_i
   color: #ffb128;
 }
 main .search_products_container .search_products .search_total_products .search_product_text {
-  font-family: "Poppins Medium";
+  font-family: "Sora Medium";
   margin-left: 12px;
   font-weight: 700;
-  font-size: 48px;
-  line-height: 55px;
+  font-size: clamp(41px, 5vw, 48px);
+  line-height: clamp(47px, 5vw, 55px);
   letter-spacing: 0%;
   color: #0b3954;
 }
@@ -53,15 +53,113 @@ main .search_products_container .search_products .products_and_experience {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 40px;
 }
-main .search_products_container .search_products .products_and_experience .line {
+main .search_products_container .search_products .products_and_experience .items_and_experience {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24.5px;
+}
+main .search_products_container .search_products .products_and_experience .items_and_experience .line {
   width: 22px;
   height: 7px;
   border-radius: 4px;
   background-color: #ffb128;
 }
+main .search_products_container .search_products .products_and_experience .items_and_experience .item_number_cont .item_number {
+  font-family: "Sora Medium";
+  font-weight: 700;
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: clamp(27px, 3vw, 32px);
+  letter-spacing: 0%;
+  color: #0b3954;
+}
+main .search_products_container .search_products .products_and_experience .items_and_experience .item_number_cont .products_text {
+  font-family: "Sora Light";
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: clamp(20px, 2vw, 24px);
+  letter-spacing: 0%;
+  color: #5c676d;
+}
+main .search_products_container .search_products .products_and_experience .items_and_experience .experiens .experiens_year {
+  font-family: "Sora Medium";
+  font-weight: 700;
+  font-size: clamp(20px, 2vw, 24px);
+  line-height: clamp(27px, 3vw, 32px);
+  letter-spacing: 0%;
+  color: #0b3954;
+}
+main .search_products_container .search_products .products_and_experience .items_and_experience .experiens .experiens_text {
+  font-family: "Sora Light";
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: clamp(20px, 2vw, 24px);
+  letter-spacing: 0%;
+  color: #5c676d;
+}
 main .search_products_container .product_items {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  margin: 60px auto;
+  width: 100%;
+}
+main .search_products_container .product_items .item_container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  flex-direction: column;
+  width: clamp(132.67px, 14vw, 179.33px);
+  height: 198px;
+  border-radius: 32px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+main .search_products_container .product_items .item_container img {
+  width: 80px;
+  height: 80px;
+}
+main .search_products_container .product_items .item_container p {
+  font-family: "Sora Medium";
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #0b3954;
+}
+main .search_products_container .product_items .item_container:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px 10px #f5f5f5;
+}
+
+@media screen and (max-width: 960px) {
+  main .search_products_container .product_items {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-between;
+    row-gap: 40px;
+  }
+  main .search_products_container .product_items .item_container {
+    width: clamp(132.67px, 26vw, 211.98px);
+    height: 192px;
+  }
+}
+@media screen and (max-width: 600px) {
+  main .search_products_container .search_products {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+}
+@media screen and (max-width: 470px) {
+  main .search_products_container .product_items {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+  main .search_products_container .product_items .item_container {
+    width: clamp(132.67px, 42vw, 302px);
+  }
 }/*# sourceMappingURL=products.css.map */

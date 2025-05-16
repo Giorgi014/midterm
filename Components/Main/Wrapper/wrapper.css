@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "Poppins Light";
-  src: url(../../../assets/font/Poppins-Light.ttf) format("woff2");
-}
-@font-face {
   font-family: "Poppins Medium";
   src: url(../../../assets/font/Poppins-Medium.ttf) format("woff2");
+}
+@font-face {
+  font-family: "Sora Light";
+  src: url(../../../assets/font/sora/static/) format("woff2");
 }
 @keyframes visibilityAnimation {
   0% {
@@ -267,11 +267,12 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons 
   margin: 30px 0px 5px 50px;
 }
 main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .go_shop {
-  width: clamp(129px, 20vw, 152px);
+  width: clamp(129px, 20vw, 172px);
   padding: 11px 30px;
   border-radius: 45px;
   background-color: #ffb128;
   border: none;
+  font-family: "Sora Light";
   font-weight: 600;
   font-size: clamp(10px, 1vw, 14px);
   line-height: clamp(10px, 3vw, 21px);
@@ -285,11 +286,12 @@ main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons 
   color: #ffb128;
 }
 main .wrapper_container .wrapper_image_conatiner .wrapper_info .wrapper_buttons .collections {
-  width: clamp(129.03px, 20vw, 184.64px);
+  width: clamp(139.03px, 20vw, 184.64px);
   padding: 11px 30px 11px 30px;
   border-radius: 45px;
   background-color: #ffffff;
   border: none;
+  font-family: "Sora Light";
   font-weight: 600;
   font-size: clamp(10px, 1vw, 14px);
   line-height: clamp(10px, 3vw, 21px);

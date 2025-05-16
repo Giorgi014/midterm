@@ -31,6 +31,7 @@ header {
   padding: 1px 42px;
   background-color: #ffffff;
   z-index: 99;
+  box-shadow: 0px 0px 20px 0px rgba(151, 151, 151, 0.762);
 }
 header .header_container {
   display: flex;

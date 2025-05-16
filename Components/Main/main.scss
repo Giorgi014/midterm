@@ -1,8 +1,7 @@
 @font-face {
-  font-family: "Poppins Light";
-  src: url(../../assets/font/Poppins-Light.ttf) format("woff2");
+  font-family: "Sora Light";
+  src: url(../../assets/font/sora/static/Sora-Light.ttf) format("woff2");
 }
-
 @mixin displayCenter($justify, $align) {
   display: flex;
   justify-content: $justify;
@@ -15,7 +14,7 @@ main {
   @include displayCenter(center, center);
   flex-direction: column;
   width: 100vw;
-  background-color: $light_grey;
-  font-family: "Poppins Light";
+  font-family: "Sora Light";
+  padding: 0 15px;
   overflow-x: hidden;
 }
