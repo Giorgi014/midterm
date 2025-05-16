@@ -1,5 +1,78 @@
-main{
-    .search_products_container{
-        margin: 100px 0px 60px 0px;
+@font-face {
+  font-family: "Poppins Medium";
+  src: url(../../../assets/font/Poppins-Medium.ttf) format("woff2");
+}
+@font-face {
+  font-family: "Poppins Light";
+  src: url(../../../assets/font/Poppins-Light.ttf) format("woff2");
+}
+
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$white: #ffffff;
+$azure: #0b3954;
+$grey: #333333;
+$light_grey: #f5f5f5;
+$orange: #ffb128;
+$transparent_grey: #ffffff26;
+$transparent_grey_border: #ffffff33;
+
+main {
+  .search_products_container {
+    @include displayCenter(center, center);
+    flex-direction: column;
+    width: 1280px;
+    margin: 100px 0px 60px 0px;
+    .search_products {
+      @include displayCenter(space-between, center);
+      width: 100%;
+      .search_total_products {
+        .search_for {
+          font-family: "Poppins Light";
+          margin-left: 12px;
+          margin-bottom: 20px;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 18px;
+          letter-spacing: 0%;
+          color: $azure;
+        }
+        .total_item_number {
+          font-family: "Poppins Medium";
+          margin-left: 12px;
+          margin-bottom: 5px;
+          font-weight: 600;
+          font-size: 48px;
+          line-height: 55px;
+          letter-spacing: 0%;
+          color: $orange;
+        }
+        .search_product_text {
+          font-family: "Poppins Medium";
+          margin-left: 12px;
+          font-weight: 700;
+          font-size: 48px;
+          line-height: 55px;
+          letter-spacing: 0%;
+          color: $azure;
+        }
+      }
+      .products_and_experience {
+        @include displayCenter(center, center);
+        .line {
+          width: 22px;
+          height: 7px;
+          border-radius: 4px;
+          background-color: $orange;
+        }
+      }
     }
+    .product_items {
+      @include displayCenter(center, center);
+    }
+  }
 }
