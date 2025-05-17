@@ -3,10 +3,6 @@
   src: url(../../../assets/font/sora/static/Sora-Medium.ttf) format("woff2");
 }
 @font-face {
-  font-family: "Sora Light";
-  src: url(../../../assets/font/sora/static/Sora-Light.ttf) format("woff2");
-}
-@font-face {
   font-family: "Poppins Light";
   src: url(../../../assets/font/Poppins-Light.ttf) format("woff2");
 }
@@ -14,7 +10,7 @@ main .rooms_container {
   display: grid;
   grid-template-columns: repeat(3, auto);
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 main .rooms_container .rooms {
   display: flex;
@@ -36,20 +32,41 @@ main .rooms_container .rooms .room_info .time_to {
   letter-spacing: 0%;
   color: #ffffff;
 }
-main .rooms_container .rooms .room_info .room {
+main .rooms_container .rooms .room_info .text_animation {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+  width: 260px;
+  height: 82px;
+  cursor: pointer;
+}
+main .rooms_container .rooms .room_info .text_animation .room {
+  position: absolute;
+  top: 25%;
   font-family: "Sora Medium";
-  margin: 20px 0;
   font-weight: 700;
   font-size: clamp(29px, 3vw, 48px);
   line-height: clamp(33px, 3vw, 55px);
   letter-spacing: 0%;
   color: #ffffff;
+  transition: top 0.3s ease-in-out;
 }
-main .rooms_container .rooms .room_info .line {
+main .rooms_container .rooms .room_info .text_animation .line {
+  position: absolute;
   width: 22px;
   height: 7px;
   border-radius: 4px;
   background-color: #ffb128;
+  bottom: 0;
+  transition: bottom 0.3s ease-in-out;
+}
+main .rooms_container .rooms .room_info .text_animation:hover .room {
+  top: 0px;
+}
+main .rooms_container .rooms .room_info .text_animation:hover .line {
+  bottom: 20px;
 }
 main .rooms_container .bedroom {
   background-image: url("../../../assets/bedroom.png");

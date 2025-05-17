@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "Sora Medium";
+  src: url(../../../assets/font/sora/static/Sora-Medium.ttf) format("woff2");
+}
+@font-face {
+  font-family: "Sora Light";
+  src: url(../../../assets/font/sora/static/Sora-Light.ttf) format("woff2");
+}
+@font-face {
+  font-family: "Poppins Light";
+  src: url(../../../assets/font/Poppins-Light.ttf) format("woff2");
+}
+
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$white: #ffffff;
+$azure: #0b3954;
+$grey: #333333;
+$light_grey: #f5f5f5;
+$grey_light: #5c676d;
+$orange: #ffb128;
+$transparent_grey: #ffffff26;
+$transparent_grey_border: #ffffff33;
+
+main {
+  .spring_conatiner {
+    @include displayCenter(center, center);
+    margin: 100px auto;
+    gap: clamp(50px, 8vw, 97px);
+    width: 100%;
+    img {
+      width: clamp(324px, 45vw, 586px);
+      height: clamp(333.61px, 45vw, 587.2px);
+    }
+    .spring {
+      width: clamp(202.98px, 40vw, 390px);
+      .search_for {
+        font-family: "Sora Medium";
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0%;
+        color: $azure;
+      }
+      .spring_head {
+        margin-top: 20px;
+        width: 95%;
+        font-family: "Sora Medium";
+        font-weight: 700;
+        font-size: clamp(29px, 5vw, 48px);
+        line-height: clamp(33px, 5vw, 55px);
+        letter-spacing: 0%;
+        color: $azure;
+      }
+      .spring_text {
+        font-family: "Poppins Light";
+        margin: 30px 0px;
+        width: 70%;
+        font-weight: 400;
+        font-size: clamp(13px, 5vw, 16px);
+        line-height: clamp(19px, 5vw, 24px);
+        letter-spacing: 0%;
+        color: $grey_light;
+      }
+      .actual_trends {
+        width: 192px;
+        padding: 15px 35px 15px 35px;
+        border-radius: 80px;
+        font-family: "Sora Light";
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0%;
+        color: $white;
+        background-color: $orange;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+        &:hover {
+          background-color: $azure;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  main {
+    .spring_conatiner {
+      @include displayCenter(center, flex-start);
+      flex-direction: column;
+      gap: 20px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
