@@ -26,6 +26,8 @@ $orange: #ffb128;
 $transparent_grey: #ffffff26;
 $transparent_grey_border: #ffffff33;
 
+// SPRING CONTAINER ============================================
+
 main {
   .spring_conatiner {
     @include displayCenter(center, center);
@@ -88,6 +90,8 @@ main {
     }
   }
 }
+
+// RESPONSIVE ============================================
 
 @media screen and (max-width: 660px) {
   main {

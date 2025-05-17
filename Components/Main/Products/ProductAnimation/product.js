@@ -1,3 +1,5 @@
+// SEARCH PRODUCT CONTAINER NUMBER ANIMATION ============================================
+
 const ITEM_NUMBER = document.getElementById("total_item_number");
 
 let speed = 300;

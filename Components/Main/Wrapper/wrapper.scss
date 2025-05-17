@@ -30,6 +30,9 @@ $orange: #ffb128;
 $transparent_grey: #ffffff26;
 $transparent_grey_border: #ffffff33;
 
+
+// WRAPPER CONTAINER ============================================
+
 main {
   .wrapper_container {
     @include displayCenter(center, center);
@@ -313,6 +316,9 @@ main {
     }
   }
 }
+
+
+// RESPONSIVE ============================================
 
 @media screen and (max-width: 768px) {
   main {

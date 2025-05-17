@@ -224,6 +224,7 @@ header nav ul #close_button {
   cursor: pointer;
 }
 header nav ul li {
+  z-index: 99;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -914,6 +915,14 @@ header nav ul .sales:hover {
   background-color: #0b3954;
   transition: 0.2s ease-in-out;
 }
+header nav:hover .shadow {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.221);
+  position: absolute;
+  top: 80px;
+  transition: 0.2s ease-in;
+}
 
 @media screen and (max-width: 1440px) {
   header nav ul .chairs .hover_container .hover_container_sections .item_hover a {
@@ -1012,6 +1021,9 @@ header nav ul .sales:hover {
     display: none;
   }
   header nav ul.active .sales {
+    display: none;
+  }
+  header nav .shadow {
     display: none;
   }
 }

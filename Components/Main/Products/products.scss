@@ -26,6 +26,9 @@ $orange: #ffb128;
 $transparent_grey: #ffffff26;
 $transparent_grey_border: #ffffff33;
 
+
+// SEARCH PRODUCT CONTAINER ============================================
+
 main {
   .search_products_container {
     @include displayCenter(center, center);

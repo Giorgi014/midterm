@@ -1,3 +1,5 @@
+// RESPONSIVE MENU AND SEARCH ============================================
+
 const BURGER_MENU_BUTTON = document.getElementById("burger_menu");
 const NAV_LIST = document.querySelector("ul");
 const RESPONSIVE_SEARCH_BUTTON = document.getElementById("res_search");

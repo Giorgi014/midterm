@@ -183,7 +183,6 @@ header {
         }
       }
       #burger_menu {
-        // @include displayCenter(center, center);
         display: none;
         width: 35px;
         height: 20px;
@@ -205,6 +204,9 @@ header {
       }
     }
   }
+
+  // NAVIGATION ============================================
+
   nav {
     @include displayCenter(center, center);
     position: relative;
@@ -224,6 +226,7 @@ header {
       }
 
       li {
+        z-index: 99;
         @include displayCenter(center, center);
         flex-direction: column;
         gap: 20px;
@@ -257,6 +260,9 @@ header {
           }
         }
       }
+
+      // CHAIRS ============================================
+
       .chairs {
         position: relative;
         border: none;
@@ -266,7 +272,6 @@ header {
           visibility: hidden;
           top: 79.5px;
           left: 0px;
-          // width: 700px;
           width: clamp(300px, 47vw, 700px);
           height: max-content;
           background-color: $white;
@@ -278,7 +283,6 @@ header {
             flex-direction: column;
             width: 40%;
             padding: 25px 20px;
-            // background-color: $white;
             .item_hover {
               @include displayCenter(space-between, center);
               border-left: none;
@@ -359,6 +363,9 @@ header {
           }
         }
       }
+
+      // BEDS ============================================
+
       .beds {
         position: relative;
         border: none;
@@ -368,7 +375,6 @@ header {
           visibility: hidden;
           top: 79.5px;
           left: 0px;
-          // width: 700px;
           width: clamp(300px, 47vw, 700px);
           height: max-content;
           background-color: $white;
@@ -380,7 +386,6 @@ header {
             flex-direction: column;
             width: 40%;
             padding: 25px 20px;
-            // background-color: $white;
             .item_hover {
               @include displayCenter(space-between, center);
               border-left: none;
@@ -449,7 +454,6 @@ header {
             position: absolute;
             bottom: clamp(10px, 2vw, 30px);
             right: -100px;
-            // width: 350px;
             width: clamp(150px, 30vw, 350px);
             height: 130px;
           }
@@ -463,6 +467,9 @@ header {
           }
         }
       }
+
+      // TABLES ============================================
+
       .tables {
         position: relative;
         border: none;
@@ -566,6 +573,9 @@ header {
           }
         }
       }
+
+      // DESKS ============================================
+
       .desks {
         position: relative;
         border: none;
@@ -671,6 +681,9 @@ header {
           }
         }
       }
+
+      // CABINETS ============================================
+
       .cabinets {
         position: relative;
         border: none;
@@ -774,6 +787,9 @@ header {
           }
         }
       }
+
+      // LIGHTING ============================================
+
       .lighting {
         position: relative;
         border: none;
@@ -783,7 +799,6 @@ header {
           visibility: hidden;
           top: 79.5px;
           right: 0px;
-          // width: 700px;
           width: clamp(300px, 47vw, 700px);
           height: max-content;
           background-color: $white;
@@ -795,13 +810,11 @@ header {
             flex-direction: column;
             width: 40%;
             padding: 25px 20px;
-            // background-color: $white;
             .item_hover {
               @include displayCenter(space-between, center);
               border-left: none;
               border-bottom: 1px solid $light_grey;
               width: 100%;
-              // padding: 15px 10px;
               padding: clamp(10px, 4vw, 15px) clamp(5px, 4vw, 10px);
               padding-bottom: clamp(10px, 2vw, 20px);
               a {
@@ -878,6 +891,8 @@ header {
         }
       }
 
+      // SALES ============================================
+
       .sales {
         padding-top: 15px;
         padding-bottom: 10px;
@@ -902,6 +917,19 @@ header {
           background-color: $azure;
           transition: 0.2s ease-in-out;
         }
+      }
+    }
+
+    // NAVIGATION HOVER ============================================
+
+    &:hover {
+      .shadow {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.221);
+        position: absolute;
+        top: 80px;
+        transition: 0.2s ease-in;
       }
     }
   }
@@ -1064,6 +1092,9 @@ header {
             display: none;
           }
         }
+      }
+      .shadow {
+        display: none;
       }
     }
   }

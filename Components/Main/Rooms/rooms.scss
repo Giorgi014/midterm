@@ -26,6 +26,8 @@ $orange: #ffb128;
 $transparent_grey: #ffffff26;
 $transparent_grey_border: #ffffff33;
 
+// ROOMS CONTAINER ============================================
+
 main {
   .rooms_container {
     @include displayGrid(3, auto);
@@ -128,6 +130,8 @@ main {
     }
   }
 }
+
+// RESPONSIVE ============================================
 
 @media screen and (max-width: 720px) {
   main {
