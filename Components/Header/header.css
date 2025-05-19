@@ -923,6 +923,9 @@ header nav:hover .shadow {
   top: 80px;
   transition: 0.2s ease-in;
 }
+header nav:hover .shadow:hover {
+  display: none;
+}
 
 @media screen and (max-width: 1440px) {
   header nav ul .chairs .hover_container .hover_container_sections .item_hover a {

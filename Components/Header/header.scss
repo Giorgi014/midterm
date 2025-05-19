@@ -930,6 +930,9 @@ header {
         position: absolute;
         top: 80px;
         transition: 0.2s ease-in;
+        &:hover{
+          display: none;
+        }
       }
     }
   }
